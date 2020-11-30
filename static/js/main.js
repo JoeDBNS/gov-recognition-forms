@@ -5,19 +5,14 @@ window.addEventListener('load', function() {
     InitNavigationMenu();
 
     switch (window.location.pathname.replace('/gov-recognition-forms', '').toLowerCase()) {
-        case '/form-long.html':
-            // InitFormProgressMarkers();
-            InitFormProgressDisplay();
-            // InitFormListeners();
+        case '/':
+        case '/index.html':
             break;
 
-        case '/form-short.html':
-            InitFormPreSelector();
-            InitFormDemoFunc();
-            break;
-
-        case '/self-help.html':
-            InitSelfHelpMenu();
+        case '/recognition-form.html':
+                InitFormListeners();
+                SetupFormFieldMasks();
+                InitFormDemoFunc();
             break;
     
         default:
@@ -60,102 +55,6 @@ function InitNavigationMenu() {
                 nav_popup.classList.remove('navbar-popup-show');
             }
         }
-    });
-}
-
-function InitFormProgressDisplay() {
-    let progress_module = document.querySelector('.progress-bar-module');
-    let progress_module_display = progress_module.querySelector('.progress-display');
-    let progress_display_toggler = progress_module.querySelector('.display-toggle');
-
-    if (progress_module) {
-        progress_module.querySelector('.display-toggle').addEventListener('click', function() {
-            if (progress_module_display.classList.contains('progress-display-open')) {
-                progress_module_display.classList.remove('progress-display-open');
-            }
-            else {
-                progress_module_display.classList.add('progress-display-open');
-            }
-        });
-    }
-
-    // close progress popup on mousedown outside of progress popup
-    document.addEventListener('mousedown', function(event) {
-        if (progress_module_display.classList.contains('progress-display-open')) {
-            contains_progress_popup = false;
-            node = event.target;
-
-            // check event.target parents for progress popup and progress toggler
-            while (node !== null) {
-                if (node === progress_module_display || node === progress_display_toggler) {
-                    contains_progress_popup = true;
-                }
-                node = node.parentElement;
-            }
-
-            // if outside of progress popup, close progress popup and flip chevron
-            if (!contains_progress_popup) {
-                progress_module_display.classList.remove('progress-display-open');
-            }
-        }
-    });
-}
-
-function InitFormProgressMarkers() {
-    Array.from(document.querySelectorAll('.progress-module .step-text')).forEach(function(element) {
-        element.addEventListener('click', function(event) {
-            if (element.parentElement.classList.length === 1) {
-                element.parentElement.classList.add('step-pending');
-            }
-            else {
-                if (element.parentElement.classList.contains('step-pending')) {
-                    element.parentElement.classList.remove('step-pending');
-                    element.parentElement.classList.add('step-complete');
-                }
-                else if (element.parentElement.classList.contains('step-complete')) {
-                    element.parentElement.classList.remove('step-complete');
-                    element.parentElement.classList.add('step-fail');
-                }
-                else if (element.parentElement.classList.contains('step-fail')) {
-                    element.parentElement.classList.remove('step-fail');
-                    element.parentElement.classList.add('step-error');
-                }
-                else if (element.parentElement.classList.contains('step-error')) {
-                    element.parentElement.classList.remove('step-error');
-                }
-            }
-        });
-    });
-}
-
-function InitSelfHelpMenu() {
-    Array.from(document.querySelectorAll('.help-topic .topic-header')).forEach((selected_topic) => {
-        selected_topic.addEventListener('click', (event) => {
-            var open_topic = document.querySelector('.help-topic-expanded');
-            if (open_topic) {
-                open_topic.classList.remove('help-topic-expanded');
-            }
-
-            if (open_topic !== selected_topic.parentElement) {
-                selected_topic.parentElement.classList.add('help-topic-expanded');
-            }
-        });
-    });
-}
-
-function InitFormPreSelector() {
-    Array.from(document.querySelectorAll('.select-card')).forEach((card) => {
-        card.addEventListener('click', (event) => {
-            document.querySelector('.form-select-module').setAttribute('hidden', 'true');
-            document.querySelector('.form-module').removeAttribute('hidden');
-            window.scrollTo(0, 0);
-        });
-    });
-
-    document.querySelector('.form-back-button').addEventListener('click', () => {
-        document.querySelector('.form-module').setAttribute('hidden', 'true');
-        document.querySelector('.form-select-module').removeAttribute('hidden');
-        window.scrollTo(0, 0);
     });
 }
 
@@ -444,6 +343,7 @@ function UpdateFormDisplay(form, request_status_code) {
             document.querySelector('[data-form-results-target=' + form.getAttribute('id') + ']').classList.add('form-results-show');
             document.querySelector('[data-form-results-target=' + form.getAttribute('id') + '] .results-success').focus();
         }
+
         if (request_status_code === 'error') {
             Array.from(document.querySelectorAll('[data-hide-on-submit]')).forEach(function(element) {
                 element.removeAttribute('hidden');
@@ -451,9 +351,6 @@ function UpdateFormDisplay(form, request_status_code) {
 
             console.error('There was an error in processing your request. Please try again later.');
             alert('There was an error in processing your request. Please try again later.');
-        }
-        if (request_status_code === 'max_submission') {
-            form.setAttribute('hidden', 'true');
         }
     }
 }
