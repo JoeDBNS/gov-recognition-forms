@@ -11,7 +11,9 @@ window.addEventListener('load', function() {
 
         case '/recognition-form.html':
                 InitFormListeners();
-                SetupFormFieldMasks();
+                SetupFormFieldMasks('form-recognition');
+
+                // refine (below) later
                 InitFormDemoFunc();
             break;
     
@@ -81,23 +83,27 @@ function InitFormDemoFunc() {
             default:
                 break;
         }
-        document.querySelector('.form-select-module').setAttribute('hidden', 'true');
-        document.querySelector('.form-module').removeAttribute('hidden');
-    });
-
-    document.querySelector('.form-back-button').addEventListener('click', () => {
-        document.querySelector('.form-module').setAttribute('hidden', 'true');
-        document.querySelector('.form-select-module').removeAttribute('hidden');
     });
 }
 
 // Forms related functions
-function SetupFormFieldMasks() {
-    var mask_phone = IMask(
-        document.getElementById('phone'), {
-            mask: '(000) 000-0000'
+function SetupFormFieldMasks(form_id) {
+    var form = document.querySelector('#form-recognition');
+
+    Array.from(form.querySelectorAll('[data-mask]')).forEach((field) => {
+        switch (field.getAttribute('data-mask')) {
+            case 'tel':
+                IMask(
+                    field, {
+                        mask: '(000) 000-0000'
+                    });
+                break;
+        
+            default:
+                console.log('Mask was not specified for:', field)
+                break;
         }
-    );
+    });
 }
 
 // Cookie management
