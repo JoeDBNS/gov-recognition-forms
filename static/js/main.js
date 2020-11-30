@@ -4,9 +4,14 @@
 window.addEventListener('load', function() {
     InitNavigationMenu();
 
-    switch (window.location.pathname.replace('/gov-recognition-forms', '').toLowerCase()) {
+    switch (window.location.pathname.toLowerCase().replace('/gov-recognition-forms', '')) {
         case '/':
         case '/index.html':
+            break;
+
+        case '/flag-form.html':
+                InitFormListeners();
+                SetupFormFieldMasks('form-flag');
             break;
 
         case '/recognition-form.html':
@@ -16,7 +21,7 @@ window.addEventListener('load', function() {
                 // refine (below) later
                 InitFormDemoFunc();
             break;
-    
+
         default:
             break;
     }
@@ -88,22 +93,31 @@ function InitFormDemoFunc() {
 
 // Forms related functions
 function SetupFormFieldMasks(form_id) {
-    var form = document.querySelector('#form-recognition');
+    var form = document.querySelector('#' + form_id);
 
-    Array.from(form.querySelectorAll('[data-mask]')).forEach((field) => {
-        switch (field.getAttribute('data-mask')) {
-            case 'tel':
-                IMask(
-                    field, {
-                        mask: '(000) 000-0000'
-                    });
-                break;
-        
-            default:
-                console.log('Mask was not specified for:', field)
-                break;
+    if (form) {
+        var fields_to_mask = form.querySelectorAll('[data-mask]');
+    
+        if (fields_to_mask.length > 0) {
+            Array.from(fields_to_mask).forEach((field) => {
+                switch (field.getAttribute('data-mask')) {
+                    case 'tel':
+                        IMask(
+                            field, {
+                                mask: '(000) 000-0000'
+                            });
+                        break;
+                
+                    default:
+                        console.log('Mask was not specified for:', field)
+                        break;
+                }
+            });
         }
-    });
+    }
+    else {
+        console.log('Cannot apply field masking, "' + form_id + '" form not found.')
+    }
 }
 
 // Cookie management
