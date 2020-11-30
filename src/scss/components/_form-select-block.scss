@@ -1,0 +1,53 @@
+.form-select-module {
+    font-family: "Montserrat", sans-serif;
+    padding: 56px 0 192px 0;
+    user-select: none;
+
+    .form-select-header {
+        margin-bottom: 20px;
+    }
+    .select-card {
+        max-width: 300px;
+        margin: 10px;
+        padding: 28px 18px 20px 18px;
+        background-color: white;
+        color: black;
+        border: 1px solid #cecece;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: linear .05s all;
+        &:hover {
+            text-decoration: none;
+            outline: none;
+            box-shadow: 0 0 2px inset #013245;
+        }
+        &:focus {
+            text-decoration: none;
+            outline: none;
+            box-shadow: 0 0 0 1px #013245;
+        }
+
+        .card-icon {
+            margin-bottom: 24px;
+
+            svg {
+                display: block;
+                width: 36px;
+                height: 36px;
+                margin: auto;
+                color: #0177a5;
+            }
+        }
+        .card-label {
+            text-align: center;
+            margin-bottom: 24px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #013245;
+        }
+        .card-about {
+            text-align: center;
+            font-size: .9rem;
+        }
+    }
+}
