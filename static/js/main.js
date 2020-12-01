@@ -309,11 +309,16 @@ function BuildFormSubmitJson(form_inputs) {
     let form_value_json = {};
 
     Array.from(form_inputs).forEach(function(input) {
-        if (input.type === 'checkbox') {
-            form_value_json[input.getAttribute('data-db-field-name')] = input.checked;
-        }
-        else {
-            form_value_json[input.getAttribute('data-db-field-name')] = ReplaceBadUrlParamCharacters(input.value);
+        if (input.hasAttribute('data-db-field-name')) {
+            switch (input.type) {
+                case 'checkbox':
+                    form_value_json[input.getAttribute('data-db-field-name')] = input.checked;
+                    break;
+
+                default:
+                    form_value_json[input.getAttribute('data-db-field-name')] = ReplaceBadUrlParamCharacters(input.value);
+                    break;
+            }
         }
     });
 
