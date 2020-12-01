@@ -176,8 +176,11 @@ function InitFormListeners() {
             let form_submit_button = document.querySelector('[data-form-submit-target]');
             let form = document.querySelector('#' + form_submit_button.getAttribute('data-form-submit-target'));
             let form_inputs = document.querySelectorAll('#' + form.getAttribute('id') + ' input, ' + '#' + form.getAttribute('id') + ' textarea, ' + '#' + form.getAttribute('id') + ' select');
+            let form_file_inputs = document.querySelectorAll('[type="file"]');
 
             SetupInputListeners(form_inputs);
+
+            SetupFileInputConverters(form_file_inputs);
 
             submit_buttom.addEventListener('click', function(event) {
                 EvaluateFormSubmit(form, form_inputs);
@@ -187,6 +190,21 @@ function InitFormListeners() {
     else {
         return;
     }
+}
+
+function SetupFileInputConverters(form_file_inputs) {
+    Array.from(form_file_inputs).forEach((file_input) => {
+        var file_base64_input = document.querySelector('#' + file_input.getAttribute('id') + '_base64');
+
+        if (file_base64_input) {
+            file_input.addEventListener('change', function() {
+                SetFileEncodedValueToField(file_input, file_base64_input);
+            });
+        }
+        else {
+            console.log('"#' + file_input.getAttribute('id') + '" does not have a base64 hidden input.');
+        }
+    });
 }
 
 function SetupInputListeners(form_inputs) {
@@ -323,6 +341,22 @@ function BuildFormSubmitJson(form_inputs) {
     });
 
     return JSON.stringify(form_value_json);
+}
+
+function SetFileEncodedValueToField(field, field_base64) {
+    var files = field.files;
+    var file = files[0];
+
+    if (files && file) {
+        var reader = new FileReader();
+
+        reader.onload = function(reader_field) {
+            var binary_string = reader_field.target.result;
+            field_base64.value = btoa(binary_string);
+        };
+
+        reader.readAsBinaryString(file);
+    }
 }
 
 function ReplaceBadUrlParamCharacters(fix_string) {
