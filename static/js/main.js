@@ -66,32 +66,6 @@ function InitNavigationMenu() {
     });
 }
 
-function InitFormDemoFunc() {
-    var type_selector = document.querySelector('#type');
-    var type_sections = document.querySelectorAll('[data-type-select]');
-    var type_section_birthday = document.querySelector('[data-type-select="birthday"]');
-    var type_section_military = document.querySelector('[data-type-select="military"]');
-
-    type_selector.addEventListener('change', (event) => {
-        Array.from(type_sections).forEach((section) => {
-            section.setAttribute('hidden', 'true');
-        });
-
-        switch (type_selector.value) {
-            case 'military':
-                type_section_military.removeAttribute('hidden');
-                break;
-
-            case 'birthday':
-                type_section_birthday.removeAttribute('hidden');
-                break;
-
-            default:
-                break;
-        }
-    });
-}
-
 function FlagChangeWatcher() {
     var field_mi_flag_qty = document.querySelector('#michigan_flag_qty');
     var field_us_flag_qty = document.querySelector('#us_flag_qty');
@@ -402,4 +376,145 @@ function UpdateFormDisplay(form, request_status_code) {
             alert('There was an error in processing your request. Please try again later.');
         }
     }
+}
+
+
+
+
+
+
+
+
+
+// Necessary attributes described below:
+//	data-target					:	id|name of the element that you're checking the value of. use id for all except for radios, use name for radios.
+//	data-target-type			:	is optional unless if the target is checkbox or radio. by default will evaluate as text.
+//	data-target-pass			:	a pseudo-array containing the target values that will take positive action. separate values by |. can be * if you want to always pass.
+//	data-target-add				:	is optional. contains class to add|remove based on pass value. if data-target-add|data-target-remove|data-target-set-required not found, by default will toggle display block|none.
+//	data-target-remove			:	is optional. contains class to add|remove based on pass value. if data-target-add|data-target-remove|data-target-set-required not found, by default will toggle display block|none.
+//	data-target-set-required	:	is optional. will add or remove 'required' attribute based on pass value. if data-target-add|data-target-remove|data-target-set-required not found, by default will toggle display block|none.
+
+function SetReferenceListeners() {
+	Array.from(document.querySelectorAll('[data-target-pass]')).forEach(function(src_element) {
+		switch (src_element.getAttribute('data-target-type')) {
+			case 'radio':
+				Array.from(document.querySelectorAll("[name=" + src_element.getAttribute('data-target') + "]")).forEach(function(radio_element) {
+					radio_element.addEventListener('change', function(event) {
+						trgt_element = document.querySelector("[name=" + src_element.getAttribute('data-target') + "]:checked");
+
+						if (src_element.getAttribute('data-target-pass').split('|').indexOf(trgt_element.value) !== -1 || src_element.getAttribute('data-target-pass').split('|').indexOf('*') !== -1) {
+							if (src_element.hasAttribute('data-target-add') || src_element.hasAttribute('data-target-remove') || src_element.hasAttribute('data-target-set-required')) {
+								if (src_element.hasAttribute('data-target-add')) {
+									src_element.classList.add(src_element.getAttribute('data-target-add'));
+								}
+								if (src_element.hasAttribute('data-target-remove')) {
+									src_element.classList.remove(src_element.getAttribute('data-target-remove'));
+								}
+								if (src_element.hasAttribute('data-target-set-required')) {
+									src_element.setAttribute('required', true);
+								}
+							}
+							else {
+								src_element.style.display = 'inherit';
+							}
+						}
+						else {
+							if (src_element.hasAttribute('data-target-add') || src_element.hasAttribute('data-target-remove') || src_element.hasAttribute('data-target-set-required')) {
+								if (src_element.hasAttribute('data-target-add')) {
+									src_element.classList.remove(src_element.getAttribute('data-target-add'));
+								}
+								if (src_element.hasAttribute('data-target-remove')) {
+									src_element.classList.add(src_element.getAttribute('data-target-remove'));
+								}
+								if (src_element.hasAttribute('data-target-set-required')) {
+									src_element.removeAttribute('required');
+								}
+							}
+							else {
+								src_element.style.display = 'none';
+							}
+						}
+					});
+				});
+				break;
+
+			case 'checkbox':
+				document.getElementById(src_element.getAttribute('data-target')).addEventListener('change', function(event) {
+					trgt_element = event.target;
+
+					if (src_element.getAttribute('data-target-pass').split('|').indexOf(trgt_element.checked.toString()) !== -1 || src_element.getAttribute('data-target-pass').split('|').indexOf('*') !== -1) {
+						if (src_element.hasAttribute('data-target-add') || src_element.hasAttribute('data-target-remove') || src_element.hasAttribute('data-target-set-required')) {
+							if (src_element.hasAttribute('data-target-add')) {
+								src_element.classList.add(src_element.getAttribute('data-target-add'));
+							}
+							if (src_element.hasAttribute('data-target-remove')) {
+								src_element.classList.remove(src_element.getAttribute('data-target-remove'));
+							}
+							if (src_element.hasAttribute('data-target-set-required')) {
+								src_element.setAttribute('required', true);
+							}
+						}
+						else {
+							src_element.style.display = 'inherit';
+						}
+					}
+					else {
+						if (src_element.hasAttribute('data-target-add') || src_element.hasAttribute('data-target-remove') || src_element.hasAttribute('data-target-set-required')) {
+							if (src_element.hasAttribute('data-target-add')) {
+								src_element.classList.remove(src_element.getAttribute('data-target-add'));
+							}
+							if (src_element.hasAttribute('data-target-remove')) {
+								src_element.classList.add(src_element.getAttribute('data-target-remove'));
+							}
+							if (src_element.hasAttribute('data-target-set-required')) {
+								src_element.removeAttribute('required');
+							}
+						}
+						else {
+							src_element.style.display = 'none';
+						}
+					}
+				});
+				break;
+
+			default:
+				document.getElementById(src_element.getAttribute('data-target')).addEventListener('change', function(event) {
+					trgt_element = event.target;
+
+					if (src_element.getAttribute('data-target-pass').split('|').indexOf(trgt_element.value.toString()) !== -1 || src_element.getAttribute('data-target-pass').split('|').indexOf('*') !== -1) {
+						if (src_element.hasAttribute('data-target-add') || src_element.hasAttribute('data-target-remove') || src_element.hasAttribute('data-target-set-required')) {
+							if (src_element.hasAttribute('data-target-add')) {
+								src_element.classList.add(src_element.getAttribute('data-target-add'));
+							}
+							if (src_element.hasAttribute('data-target-remove')) {
+								src_element.classList.remove(src_element.getAttribute('data-target-remove'));
+							}
+							if (src_element.hasAttribute('data-target-set-required')) {
+								src_element.setAttribute('required', true);
+							}
+						}
+						else {
+							src_element.style.display = 'inherit';
+						}
+					}
+					else {
+						if (src_element.hasAttribute('data-target-add') || src_element.hasAttribute('data-target-remove') || src_element.hasAttribute('data-target-set-required')) {
+							if (src_element.hasAttribute('data-target-add')) {
+								src_element.classList.remove(src_element.getAttribute('data-target-add'));
+							}
+							if (src_element.hasAttribute('data-target-remove')) {
+								src_element.classList.add(src_element.getAttribute('data-target-remove'));
+							}
+							if (src_element.hasAttribute('data-target-set-required')) {
+								src_element.removeAttribute('required');
+							}
+						}
+						else {
+							src_element.style.display = 'none';
+						}
+					}
+				});
+				break;
+		}
+	});
 }
