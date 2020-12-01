@@ -75,7 +75,7 @@
     <main id="app-main" class="container-fluid">
         <div class="row justify-content-center">
             <section class="form-module col-12 col-lg-8 col-xl-9">
-                <form class="container-fluid col-12 col-sm-10 col-md-8 col-lg-10" id="form-recognition">
+                <form class="container-fluid col-12 col-sm-10 col-md-8 col-lg-10" id="form-event">
                     <div class="row justify-content-center">
                         <div style="overflow: hidden; border-radius: 0px 0px 10px 10px;">
                             <img src="./static/img/GovernorWhitmer_banner.png" alt="Website banner of Governor Whitmer standing in front of the Mackinac Bridge" style="width: 100%; max-width: 1005px;">
@@ -84,185 +84,20 @@
 
                     <div class="form-page">
                         <h1 class="form-header">
-                            Letter of Recognition
+                            Event Welcome Letter
                         </h1>
 
                         <hr>
 
                         <br>
 
-                        <p class="form-header-subtext">All requests for recognition from the Executive Office of the Governor should be submitted at least 1 week prior to the date recognition is needed.</p>
                         <p class="form-header-subtext">Please remember that recognition requests are reviewed on a case-by-case basis and the Governor's Office reserves the right to decline any request.</p>
-                        <p class="form-header-subtext">For questions, please call the Executive Office of the Governor - Constituent Relations Division at (517) 335-7858.</p>
+                        <p class="form-header-subtext">For questions, please call the Executive Office of the Governor - Constituent Services Division at (517) 335-7858.</p>
+                        <p class="form-header-subtext">For a PDF of the letter, we require that the request be submitted at least 5 business days in advance. For hard copies, we require that the request be made at least 10 business days in advance.</p>
 
                         <br>
 
                         <p class="form-header-subtext-notice">* indicates field is required</p>
-
-                        <div class="form-section row">
-                            <div class="section-header col-12">
-                                <div class="header-text">Recognition Information</div>
-                                <div class="header-divider col"></div>
-                            </div>
-
-                            <div class="input-set input-set-required col-12 col-md-12 col-lg-6">
-                                <label for="type">What type of recognition are you seeking?</label>
-                                <select name="type" id="type" required>
-                                    <option></option>
-                                    <option value="birthday">Birthday Greeting</option>
-                                    <option value="military">Military Service Retirement Recognition</option>
-                                </select>
-                            </div>
-
-                            <div class="col-12 col-md-12 col-lg-6"></div>
-
-                            <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="birthday" style="display: none;">
-                                <div class="input-set col-12 col-md-6 col-lg-6">
-                                    <label for="dob">Date of Birthday</label>
-                                    <input type="date" id="dob">
-                                </div>
-    
-                                <div class="input-set col-12 col-md-6 col-lg-6">
-                                    <label for="age">Which Birthday</label>
-                                    <select name="age" id="age">
-                                        <option></option>
-                                        <option value="1">1st</option>
-                                        <option value="2">2nd</option>
-                                        <option value="3">3rd</option>
-                                        <option value="4">4th</option>
-                                        <option value="5">5th</option>
-                                        <option value="6">6th</option>
-                                        <option value="7">7th</option>
-                                        <option value="8">8th</option>
-                                        <option value="9">9th</option>
-                                        <option value="10">10th</option>
-                                        <option value="11">11th</option>
-                                        <option value="12">12th</option>
-                                        <option value="13">13th</option>
-                                        <option value="14">14th</option>
-                                        <option value="15">15th</option>
-                                        <option value="16">16th</option>
-                                        <option value="17">17th</option>
-                                        <option value="18">18th</option>
-                                        <option value="19">19th</option>
-                                        <option value="20">20th</option>
-                                        <option value="21">21st</option>
-                                        <option value="22">22nd</option>
-                                        <option value="23">23rd</option>
-                                        <option value="24">24th</option>
-                                        <option value="25">25th</option>
-                                        <option value="26">26th</option>
-                                        <option value="27">27th</option>
-                                        <option value="28">28th</option>
-                                        <option value="29">29th</option>
-                                        <option value="30">30th</option>
-                                        <option value="31">31st</option>
-                                        <option value="32">32nd</option>
-                                        <option value="33">33rd</option>
-                                        <option value="34">34th</option>
-                                        <option value="35">35th</option>
-                                        <option value="36">36th</option>
-                                        <option value="37">37th</option>
-                                        <option value="38">38th</option>
-                                        <option value="39">39th</option>
-                                        <option value="40">40th</option>
-                                        <option value="41">41st</option>
-                                        <option value="42">42nd</option>
-                                        <option value="43">43rd</option>
-                                        <option value="44">44th</option>
-                                        <option value="45">45th</option>
-                                        <option value="46">46th</option>
-                                        <option value="47">47th</option>
-                                        <option value="48">48th</option>
-                                        <option value="49">49th</option>
-                                        <option value="50">50th</option>
-                                        <option value="51">51st</option>
-                                        <option value="52">52nd</option>
-                                        <option value="53">53rd</option>
-                                        <option value="54">54th</option>
-                                        <option value="55">55th</option>
-                                        <option value="56">56th</option>
-                                        <option value="57">57th</option>
-                                        <option value="58">58th</option>
-                                        <option value="59">59th</option>
-                                        <option value="60">60th</option>
-                                        <option value="61">61st</option>
-                                        <option value="62">62nd</option>
-                                        <option value="63">63rd</option>
-                                        <option value="64">64th</option>
-                                        <option value="65">65th</option>
-                                        <option value="66">66th</option>
-                                        <option value="67">67th</option>
-                                        <option value="68">68th</option>
-                                        <option value="69">69th</option>
-                                        <option value="70">70th</option>
-                                        <option value="71">71st</option>
-                                        <option value="72">72nd</option>
-                                        <option value="73">73rd</option>
-                                        <option value="74">74th</option>
-                                        <option value="75">75th</option>
-                                        <option value="76">76th</option>
-                                        <option value="77">77th</option>
-                                        <option value="78">78th</option>
-                                        <option value="79">79th</option>
-                                        <option value="80">80th</option>
-                                        <option value="81">81st</option>
-                                        <option value="82">82nd</option>
-                                        <option value="83">83rd</option>
-                                        <option value="84">84th</option>
-                                        <option value="85">85th</option>
-                                        <option value="86">86th</option>
-                                        <option value="87">87th</option>
-                                        <option value="88">88th</option>
-                                        <option value="89">89th</option>
-                                        <option value="90">90th</option>
-                                        <option value="91">91st</option>
-                                        <option value="92">92nd</option>
-                                        <option value="93">93rd</option>
-                                        <option value="94">94th</option>
-                                        <option value="95">95th</option>
-                                        <option value="96">96th</option>
-                                        <option value="97">97th</option>
-                                        <option value="98">98th</option>
-                                        <option value="99">99th</option>
-                                        <option value="100">100th</option>
-                                        <option value="101">101st</option>
-                                        <option value="102">102nd</option>
-                                        <option value="103">103rd</option>
-                                        <option value="104">104th</option>
-                                        <option value="105">105th</option>
-                                        <option value="106">106th</option>
-                                        <option value="107">107th</option>
-                                        <option value="108">108th</option>
-                                        <option value="109">109th</option>
-                                        <option value="110">110th</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="military" style="display: none;">
-                                <div class="input-set col-12 col-md-12 col-lg-6">
-                                    <label for="military_position">Military Position</label>
-                                    <input type="text" id="military_position">
-                                </div>
-
-                                <div class="input-set col-12 col-md-6 col-lg-6">
-                                    <label for="military_years">Number of Years Served</label>
-                                    <input type="number" id="military_years">
-                                </div>
-    
-                                <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
-                                    <label for="military_branch">Branch of Service</label>
-                                    <select name="military_branch" id="military_branch" required>
-                                        <option></option>
-                                        <option value="army">Army</option>
-                                        <option value="navy">Navy</option>
-                                        <option value="airforce">Air Force</option>
-                                        <option value="marinecorps">Marine Corps</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
 
                         <div class="form-section row">
                             <div class="section-header col-12">
@@ -281,18 +116,18 @@
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
-                                <label for="mailing_address">Mailing Address</label>
-                                <input type="text" id="mailing_address" required>
+                                <label for="requestor_address">Mailing Address</label>
+                                <input type="text" id="requestor_address" required>
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
-                                <label for="mailing_city">City</label>
-                                <input type="text" id="mailing_city" required>
+                                <label for="requestor_city">City</label>
+                                <input type="text" id="requestor_city" required>
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
-                                <label for="mailing_state">State</label>
-                                <select name="mailing_state" id="mailing_state" required>
+                                <label for="requestor_state">State</label>
+                                <select name="requestor_state" id="requestor_state" required>
                                     <option></option>
                                     <option value="AL">Alabama</option>
                                     <option value="AK">Alaska</option>
@@ -348,8 +183,8 @@
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
-                                <label for="mailing_zip">Zip Code</label>
-                                <input type="text" id="mailing_zip" required>
+                                <label for="requestor_zip">Zip Code</label>
+                                <input type="text" id="requestor_zip" required>
                             </div>
 
                             <div class="col-12 col-md-6 col-lg-6"></div>
@@ -367,13 +202,33 @@
 
                         <div class="form-section row">
                             <div class="section-header col-12">
-                                <div class="header-text">Recipient Information</div>
+                                <div class="header-text">Event Information</div>
                                 <div class="header-divider col"></div>
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
-                                <label for="recognized">Name of person(s) or organization being recognized</label>
-                                <input type="text" id="recognized" required>
+                                <label for="event_name">Event Name</label>
+                                <input type="text" id="event_name" required>
+                            </div>
+
+                            <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
+                                <label for="org_name">Organization Name</label>
+                                <input type="text" id="org_name" required>
+                            </div>
+
+                            <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
+                                <label for="event_date">Date of Event</label>
+                                <input type="date" id="event_date" required>
+                            </div>
+
+                            <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
+                                <label for="letter_needed_date">Date By Which Letter Is Needed</label>
+                                <input type="date" id="letter_needed_date" required>
+                            </div>
+
+                            <div class="input-set col-12 col-md-12 col-lg-12">
+                                <label for="event_details">Event Details</label>
+                                <textarea name="event_details" id="event_details" maxlength="4000"></textarea>
                             </div>
 
                             <div class="input-set input-set-singlecheck col-12 col-md-12 col-lg-12">
@@ -384,25 +239,25 @@
                                     </span>
     
                                     <span class="label-text">
-                                        Check this box to ship this letter to an address that is different than the Mailing Address above
+                                        Check this box to ship this letter to an address that is different than the Requestor's Address above
                                     </span>
                                 </label>
                             </div>
                             
                             <div class="col-12 row px-0 mx-0" data-target="ship_to_address_true" data-target-type="checkbox" data-target-pass="true" style="display: none;">
                                 <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
-                                    <label for="alternate_address">Alternative Mailing Address</label>
-                                    <input type="text" id="alternate_address" required>
+                                    <label for="mailing_address">Mailing Address</label>
+                                    <input type="text" id="mailing_address" required>
                                 </div>
     
                                 <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
-                                    <label for="alternate_city">Alternative Mailing City</label>
-                                    <input type="text" id="alternate_city" required>
+                                    <label for="mailing_city">Mailing City</label>
+                                    <input type="text" id="mailing_city" required>
                                 </div>
     
                                 <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
-                                    <label for="alternate_state">Alternative Mailing State</label>
-                                    <select name="state" id="alternate_state" required>
+                                    <label for="mailing_state">Mailing State</label>
+                                    <select name="state" id="mailing_state" required>
                                         <option></option>
                                         <option value="AL">Alabama</option>
                                         <option value="AK">Alaska</option>
@@ -458,23 +313,18 @@
                                 </div>
     
                                 <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
-                                    <label for="alternate_zip">Alternative Mailing Zip Code</label>
-                                    <input type="text" id="alternate_zip" required>
+                                    <label for="mailing_zip">Mailing Zip Code</label>
+                                    <input type="text" id="mailing_zip" required>
                                 </div>
-                            </div>
-
-                            <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
-                                <label for="need_by">Date by which letter is needed</label>
-                                <input type="date" id="need_by" required>
                             </div>
                         </div>
 
                         <div class="form-action row justify-content-center">
-                            <buttton class="btn" type="button" tabindex="0" data-form-submit-target="form-recognition" data-hide-on-submit>
+                            <buttton class="btn" type="button" tabindex="0" data-form-submit-target="form-event" data-hide-on-submit>
                                 Submit
                             </buttton>
 
-                            <div class="form-spinner" data-form-loading-target="form-recognition">
+                            <div class="form-spinner" data-form-loading-target="form-event">
                                 <div class="spinner-border" role="status">
                                     <span class="sr-only">Loading...</span>
                                 </div>
@@ -483,7 +333,7 @@
                     </div>
                 </form>
 
-                <div class="form-results container-fluid col-12 col-sm-10 col-md-8 col-lg-10" data-form-results-target="form-recognition">
+                <div class="form-results container-fluid col-12 col-sm-10 col-md-8 col-lg-10" data-form-results-target="form-event">
                     <div class="results-page results-success container-fluid">
                         <div class="row justify-content-center my-5">
                             <?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg2" height="100" width="100"><metadata id="metadata23"> <rdf:RDF> <cc:Work rdf:about=""> <dc:format>image/svg+xml</dc:format> <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" /> <dc:title></dc:title> </cc:Work> </rdf:RDF></metadata><defs id="defs21" /><g style="fill:none" id="g4"><title id="title6">background</title><rect style="fill:none" x="-1" y="-1" width="102" height="102" id="canvas_background" fill="#fff" /><g style="fill:none" id="canvasGrid" width="100%" height="100%" x="0" y="0" overflow="visible" display="none"><rect style="fill:none" id="rect10" width="100%" height="100%" x="0" y="0" stroke-width="0" fill="url(#gridpattern)" /></g></g><g style="fill:none" id="g12"><title id="title14">Layer 1</title><ellipse style="fill:none;stroke:#3fa847;stroke-opacity:1" fill="#fff" stroke-width="3.5" cx="50.128205" cy="50.015488" id="svg_1" rx="47.974357" ry="48.030313" stroke="#000" /><line transform="rotate(2.7238028049468994 28.269227981567305,60.51081466674801) " fill="none" stroke="#000" stroke-width="3.5" style="fill:none;stroke-linecap:round;stroke:#3fa847;stroke-opacity:1" stroke-opacity="null" fill-opacity="null" x1="19.182824" y1="48.558304" x2="37.355635" y2="72.463328" id="svg_3" stroke-linejoin="null" stroke-linecap="null" /><line style="fill:none;stroke:#3fa847;stroke-width:3.73036098;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" stroke-opacity="null" fill-opacity="null" x1="36.768421" y1="72.760696" x2="80.271339" y2="38.153568" id="svg_4" stroke-linejoin="null" /></g></svg>
