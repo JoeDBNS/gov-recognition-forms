@@ -343,10 +343,12 @@ function ProcessFormSubmit(form, form_submit_json_string) {
         }
     };
 
-    request.open('POST', url);
-    request.send();
+    console.log('Send:\n' + form_submit_json_string);
 
-    UpdateFormDisplay(form, 'loading');
+    // request.open('POST', url);
+    // request.send();
+
+    // UpdateFormDisplay(form, 'loading');
 }
 
 function UpdateFormDisplay(form, request_status_code) {
