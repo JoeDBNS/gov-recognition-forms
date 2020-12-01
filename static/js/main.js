@@ -196,6 +196,13 @@ function SetupInputListeners(form_inputs) {
                 if (input.value !== '') {
                     input.parentElement.classList.remove('input-set-failed');
                 }
+                else {
+                    if (input.hasAttribute('data-regex-check') && !input.parentElement.classList.contains('input-set-required')) {
+                        if (input.value === '') {
+                            input.parentElement.classList.remove('input-set-failed');
+                        }
+                    }
+                }
             });
         }
     });
