@@ -66,7 +66,7 @@
 		.navbar-popup {
 			position: absolute;
 			right: 0;
-			top: 41px;
+			top: 43px;
 			background-color: $white;
 			color: $black;
 			border-width: 2px;
@@ -78,7 +78,7 @@
 			transition: linear 0.05s all;
 			pointer-events: none;
 			&:focus, &:hover {
-				top: 41px;
+				top: 43px;
 				opacity: 1;
 				pointer-events: auto;
 			}
@@ -106,7 +106,7 @@
 			}
 		}
 		.navbar-popup-show {
-			top: 41px;
+			top: 43px;
 			opacity: 1;
 			pointer-events: auto;
 		}
