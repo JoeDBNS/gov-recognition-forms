@@ -12,6 +12,7 @@ window.addEventListener('load', function() {
         case '/flag-form.html':
                 InitFormListeners();
                 SetupFormFieldMasks('form-flag');
+                FlagChangeWatcher();
             break;
 
         case '/recognition-form.html':
@@ -89,6 +90,34 @@ function InitFormDemoFunc() {
                 break;
         }
     });
+}
+
+function FlagChangeWatcher() {
+    var field_mi_flag_qty = document.querySelector('#michigan_flag_qty');
+    var field_us_flag_qty = document.querySelector('#us_flag_qty');
+    var field_flag_total = document.querySelector('#flag_total');
+
+
+    field_mi_flag_qty.addEventListener('change', (event) => {
+        field_flag_total.value = '$' + GetTotalFlagCost();
+    });
+
+    field_us_flag_qty.addEventListener('change', (event) => {
+        field_flag_total.value = '$' + GetTotalFlagCost();
+    });
+}
+
+function GetTotalFlagCost() {
+    var mi_flag_cost = 45.00;
+    var us_flag_cost = 25.00;
+    var field_mi_flag_qty = parseInt(document.querySelector('#michigan_flag_qty').value);
+    var field_us_flag_qty = parseInt(document.querySelector('#us_flag_qty').value);
+    var cost_total = 0;
+
+    cost_total = cost_total + (mi_flag_cost * field_mi_flag_qty);
+    cost_total = cost_total + (us_flag_cost * field_us_flag_qty);
+
+    return parseInt(cost_total);
 }
 
 // Forms related functions
