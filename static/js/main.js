@@ -18,9 +18,13 @@ window.addEventListener('load', function() {
         case '/recognition-form.html':
                 InitFormListeners();
                 SetupFormFieldMasks('form-recognition');
+                SetReferenceListeners();
+            break;
 
-                // refine (below) later
-                InitFormDemoFunc();
+        case '/event-form.html':
+                InitFormListeners();
+                SetupFormFieldMasks('form-event');
+                SetReferenceListeners();
             break;
 
         default:
