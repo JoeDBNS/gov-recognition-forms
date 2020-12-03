@@ -27,6 +27,12 @@ window.addEventListener('load', function() {
                 SetReferenceListeners();
             break;
 
+        case '/tribute-form.html':
+                InitFormListeners();
+                SetupFormFieldMasks('form-tribute');
+                SetReferenceListeners();
+            break;
+
         default:
             break;
     }
