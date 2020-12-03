@@ -89,7 +89,7 @@
     <main id="app-main" class="container-fluid">
         <div class="row justify-content-center">
             <section class="form-module col-12 col-lg-8 col-xl-9">
-                <form class="container-fluid col-12 col-sm-10 col-md-8 col-lg-10" id="form-event">
+                <form class="container-fluid col-12 col-sm-10 col-md-8 col-lg-10" id="form-proclamation">
                     <div class="row justify-content-center">
                         <div style="overflow: hidden; border-radius: 0px 0px 10px 10px;">
                             <img src="./static/img/GovernorWhitmer_banner.png" alt="Website banner of Governor Whitmer standing in front of the Mackinac Bridge" style="width: 100%; max-width: 1005px;">
@@ -98,16 +98,15 @@
 
                     <div class="form-page">
                         <h1 class="form-header">
-                            Event Welcome Letter
+                            Proclamation Request Form
                         </h1>
 
                         <hr>
 
                         <br>
 
-                        <p class="form-header-subtext">Please remember that recognition requests are reviewed on a case-by-case basis and the Governor's Office reserves the right to decline any request.</p>
-                        <p class="form-header-subtext">For questions, please call the Executive Office of the Governor - Constituent Services Division at (517) 335-7858.</p>
-                        <p class="form-header-subtext">For a PDF of the letter, we require that the request be submitted at least 5 business days in advance. For hard copies, we require that the request be made at least 10 business days in advance.</p>
+                        <p class="form-header-subtext">Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum ullam minus commodi necessitatibus optio eos nemo quibusdam nihil ea facilis dicta incidunt repellat vitae, dolorem ipsam tempora nesciunt quos aliquid?</p>
+                        <p class="form-header-subtext">For a PDF of the proclamation, we require that the request be submitted at least 4 weeks in advance. For hard copies, we require that the request be made at least 5 weeks in advance.</p>
 
                         <br>
 
@@ -216,61 +215,97 @@
 
                         <div class="form-section row">
                             <div class="section-header col-12">
-                                <div class="header-text">Event Information</div>
+                                <div class="header-text">Proclamation Information</div>
                                 <div class="header-divider col"></div>
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
-                                <label for="event_name">Event Name</label>
-                                <input type="text" id="event_name" required>
-                            </div>
-
-                            <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
-                                <label for="org_name">Organization Name</label>
-                                <input type="text" id="org_name" required>
-                            </div>
-
-                            <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
-                                <label for="event_date">Date of Event</label>
-                                <input type="date" id="event_date" required>
-                            </div>
-
-                            <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
-                                <label for="letter_needed_date">Date By Which Letter Is Needed</label>
-                                <input type="date" id="letter_needed_date" required>
+                                <label for="proclamation_purpose">Purpose of this proclamation</label>
+                                <textarea name="proclamation_purpose" id="proclamation_purpose" maxlength="4000" required></textarea>
                             </div>
 
                             <div class="input-set col-12 col-md-12 col-lg-12">
-                                <label for="event_details">Event Details</label>
-                                <textarea name="event_details" id="event_details" maxlength="4000"></textarea>
+                                <label for="associated_organization_name">Organization affiliated with the proclamation/requestor (if any)</label>
+                                <input type="text" id="associated_organization_name">
+                            </div>
+
+                            <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
+                                <label for="affect_michigan">How does this affect Michigan?</label>
+                                <textarea name="affect_michigan" id="affect_michigan" maxlength="4000" required></textarea>
+                            </div>
+
+                            <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
+                                <label for="suggested_title">Suggested Title</label>
+                                <input type="text" id="suggested_title" required>
+                            </div>
+
+                            <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
+                                <label for="proclamation_draft_language">Draft language for proclamation in the form of 4-6 "Whereas" clauses</label>
+                                <textarea name="proclamation_draft_language" id="proclamation_draft_language" maxlength="4000" required></textarea>
                             </div>
 
                             <div class="input-set input-set-singlecheck col-12 col-md-12 col-lg-12">
-                                <input id="ship_to_address_true" type="checkbox" name="ship_to_address">
-                                <label for="ship_to_address_true">
+                                <input id="proclamation_used_previous_years_true" type="checkbox" name="proclamation_used_previous_years">
+                                <label for="proclamation_used_previous_years_true">
                                     <span class="label-box-display">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                     </span>
-    
+
                                     <span class="label-text">
-                                        Check this box to ship this letter to an address that is different than the Requestor's Address above
+                                        Check this box is this proclamation has been issued in previous years
                                     </span>
                                 </label>
                             </div>
-                            
+
+                            <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
+                                <label for="proclamation_date">Date of Proclamation</label>
+                                <input type="date" id="proclamation_date" required>
+                            </div>
+
+                            <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
+                                <label for="proclamation_needed_date">Date By Which Proclamation Is Needed</label>
+                                <input type="date" id="proclamation_needed_date" required>
+                            </div>
+
+                            <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
+                                <label for="delivery_method">Method Of Delivery</label>
+                                <select name="delivery_method" id="delivery_method" required>
+                                    <option></option>
+                                    <option value="pickup">Pick up from Romney Building at 111 S. Capitol Ave Lansing, MI 48933 (Our office will reach out to coordinate a pick up time.)</option>
+                                    <option value="mail">Mail Delivery</option>
+                                </select>
+                            </div>
+
+                            <div class="col-12 col-md-6 col-lg-6"></div>
+
+                            <div class="col-12 row px-0 mx-0" data-target="delivery_method" data-target-pass="mail" style="display: none;">
+                                <div class="input-set input-set-singlecheck col-12 col-md-12 col-lg-12">
+                                    <input id="ship_to_address_true" type="checkbox" name="ship_to_address">
+                                    <label for="ship_to_address_true">
+                                        <span class="label-box-display">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                                        </span>
+
+                                        <span class="label-text">
+                                            Check this box to ship this letter to an address that is different than the Mailing Address above
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+
                             <div class="col-12 row px-0 mx-0" data-target="ship_to_address_true" data-target-type="checkbox" data-target-pass="true" style="display: none;">
                                 <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
-                                    <label for="mailing_address">Mailing Address</label>
-                                    <input type="text" id="mailing_address" required>
+                                    <label for="mailing_address">Alternative Mailing Address</label>
+                                    <input type="text" id=mailingaddress" required>
                                 </div>
-    
+
                                 <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
-                                    <label for="mailing_city">Mailing City</label>
+                                    <label for="mailing_city">Alternative Mailing City</label>
                                     <input type="text" id="mailing_city" required>
                                 </div>
-    
+
                                 <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
-                                    <label for="mailing_state">Mailing State</label>
+                                    <label for="mailing_state">Alternative Mailing State</label>
                                     <select name="state" id="mailing_state" required>
                                         <option></option>
                                         <option value="AL">Alabama</option>
@@ -325,20 +360,20 @@
                                         <option value="WY">Wyoming</option>
                                     </select>
                                 </div>
-    
+
                                 <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
-                                    <label for="mailing_zip">Mailing Zip Code</label>
+                                    <label for="mailing_zip">Alternative Mailing Zip Code</label>
                                     <input type="text" id="mailing_zip" required>
                                 </div>
                             </div>
                         </div>
 
                         <div class="form-action row justify-content-center">
-                            <buttton class="btn" type="button" tabindex="0" data-form-submit-target="form-event" data-hide-on-submit>
+                            <buttton class="btn" type="button" tabindex="0" data-form-submit-target="form-proclamation" data-hide-on-submit>
                                 Submit
                             </buttton>
 
-                            <div class="form-spinner" data-form-loading-target="form-event">
+                            <div class="form-spinner" data-form-loading-target="form-proclamation">
                                 <div class="spinner-border" role="status">
                                     <span class="sr-only">Loading...</span>
                                 </div>
@@ -347,7 +382,7 @@
                     </div>
                 </form>
 
-                <div class="form-results container-fluid col-12 col-sm-10 col-md-8 col-lg-10" data-form-results-target="form-event">
+                <div class="form-results container-fluid col-12 col-sm-10 col-md-8 col-lg-10" data-form-results-target="form-proclamation">
                     <div class="results-page results-success container-fluid">
                         <div class="row justify-content-center my-5">
                             <?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" version="1.1" id="svg2" height="100" width="100"><metadata id="metadata23"> <rdf:RDF> <cc:Work rdf:about=""> <dc:format>image/svg+xml</dc:format> <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" /> <dc:title></dc:title> </cc:Work> </rdf:RDF></metadata><defs id="defs21" /><g style="fill:none" id="g4"><title id="title6">background</title><rect style="fill:none" x="-1" y="-1" width="102" height="102" id="canvas_background" fill="#fff" /><g style="fill:none" id="canvasGrid" width="100%" height="100%" x="0" y="0" overflow="visible" display="none"><rect style="fill:none" id="rect10" width="100%" height="100%" x="0" y="0" stroke-width="0" fill="url(#gridpattern)" /></g></g><g style="fill:none" id="g12"><title id="title14">Layer 1</title><ellipse style="fill:none;stroke:#3fa847;stroke-opacity:1" fill="#fff" stroke-width="3.5" cx="50.128205" cy="50.015488" id="svg_1" rx="47.974357" ry="48.030313" stroke="#000" /><line transform="rotate(2.7238028049468994 28.269227981567305,60.51081466674801) " fill="none" stroke="#000" stroke-width="3.5" style="fill:none;stroke-linecap:round;stroke:#3fa847;stroke-opacity:1" stroke-opacity="null" fill-opacity="null" x1="19.182824" y1="48.558304" x2="37.355635" y2="72.463328" id="svg_3" stroke-linejoin="null" stroke-linecap="null" /><line style="fill:none;stroke:#3fa847;stroke-width:3.73036098;stroke-linecap:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" stroke-opacity="null" fill-opacity="null" x1="36.768421" y1="72.760696" x2="80.271339" y2="38.153568" id="svg_4" stroke-linejoin="null" /></g></svg>

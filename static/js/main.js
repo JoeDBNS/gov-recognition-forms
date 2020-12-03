@@ -33,6 +33,12 @@ window.addEventListener('load', function() {
                 SetReferenceListeners();
             break;
 
+        case '/proclamation-form.html':
+                InitFormListeners();
+                SetupFormFieldMasks('form-proclamation');
+                SetReferenceListeners();
+            break;
+
         default:
             break;
     }
