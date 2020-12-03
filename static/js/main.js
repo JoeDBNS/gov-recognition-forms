@@ -458,7 +458,7 @@ function SetReferenceListeners() {
 			case 'radio':
 				Array.from(document.querySelectorAll("[name=" + src_element.getAttribute('data-target') + "]")).forEach(function(radio_element) {
 					radio_element.addEventListener('change', function(event) {
-						trgt_element = document.querySelector("[name=" + src_element.getAttribute('data-target') + "]:checked");
+						var trgt_element = document.querySelector("[name=" + src_element.getAttribute('data-target') + "]:checked");
 
 						if (src_element.getAttribute('data-target-pass').split('|').indexOf(trgt_element.value) !== -1 || src_element.getAttribute('data-target-pass').split('|').indexOf('*') !== -1) {
 							if (src_element.hasAttribute('data-target-add') || src_element.hasAttribute('data-target-remove') || src_element.hasAttribute('data-target-set-required')) {
@@ -498,7 +498,7 @@ function SetReferenceListeners() {
 
 			case 'checkbox':
 				document.getElementById(src_element.getAttribute('data-target')).addEventListener('change', function(event) {
-					trgt_element = event.target;
+					var trgt_element = event.target;
 
 					if (src_element.getAttribute('data-target-pass').split('|').indexOf(trgt_element.checked.toString()) !== -1 || src_element.getAttribute('data-target-pass').split('|').indexOf('*') !== -1) {
 						if (src_element.hasAttribute('data-target-add') || src_element.hasAttribute('data-target-remove') || src_element.hasAttribute('data-target-set-required')) {
@@ -537,7 +537,7 @@ function SetReferenceListeners() {
 
 			default:
 				document.getElementById(src_element.getAttribute('data-target')).addEventListener('change', function(event) {
-					trgt_element = event.target;
+                    var trgt_element = event.target;
 
 					if (src_element.getAttribute('data-target-pass').split('|').indexOf(trgt_element.value.toString()) !== -1 || src_element.getAttribute('data-target-pass').split('|').indexOf('*') !== -1) {
 						if (src_element.hasAttribute('data-target-add') || src_element.hasAttribute('data-target-remove') || src_element.hasAttribute('data-target-set-required')) {
