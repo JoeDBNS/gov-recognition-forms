@@ -224,6 +224,17 @@
                                 <input type="text" id="tribute_name" required>
                             </div>
 
+                            <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
+                                <label for="tribute_details">Please provide as much background information as you can about the tribute purpose and recipient</label>
+                                <textarea name="tribute_details" id="tribute_details" maxlength="4000" required></textarea>
+                            </div>
+
+                            <div class="input-set col-12 col-md-12 col-lg-12">
+                                <label for="additional_info_attachment">Attachment for Additional Background Information</label>
+                                <input type="file" id="additional_info_attachment">
+                                <input type="hidden" id="additional_info_attachment_base64" data-db-field-name="additional_info_attachment">
+                            </div>
+
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
                                 <label for="tribute_needed_date">Date By Which Tribute Is Needed</label>
                                 <input type="date" id="tribute_needed_date" required>
@@ -325,11 +336,6 @@
                                     <label for="mailing_zip">Alternative Mailing Zip Code</label>
                                     <input type="text" id="mailing_zip" required>
                                 </div>
-                            </div>
-
-                            <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
-                                <label for="tribute_details">Please provide as much background information as you can about the tribute purpose and recipient</label>
-                                <textarea name="tribute_details" id="event_details" maxlength="4000" required></textarea>
                             </div>
                         </div>
 
