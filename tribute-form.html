@@ -120,27 +120,27 @@
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-6">
                                 <label for="requestor_first_name">First Name of Requestor</label>
-                                <input type="text" id="requestor_first_name" required>
+                                <input type="text" id="requestor_first_name" required data-db-field-name="requestor_first_name">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-6">
                                 <label for="requestor_last_name">Last Name of Requestor</label>
-                                <input type="text" id="requestor_last_name" required>
+                                <input type="text" id="requestor_last_name" required data-db-field-name="requestor_last_name">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
                                 <label for="requestor_address">Mailing Address</label>
-                                <input type="text" id="requestor_address" required>
+                                <input type="text" id="requestor_address" required data-db-field-name="requestor_address">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
                                 <label for="requestor_city">City</label>
-                                <input type="text" id="requestor_city" required>
+                                <input type="text" id="requestor_city" required data-db-field-name="requestor_city">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
                                 <label for="requestor_state">State</label>
-                                <select name="requestor_state" id="requestor_state" required>
+                                <select name="requestor_state" id="requestor_state" required data-db-field-name="requestor_state">
                                     <option></option>
                                     <option value="AL">Alabama</option>
                                     <option value="AK">Alaska</option>
@@ -197,19 +197,19 @@
 
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
                                 <label for="requestor_zip">Zip Code</label>
-                                <input type="text" id="requestor_zip" required>
+                                <input type="text" id="requestor_zip" required data-db-field-name="requestor_zip">
                             </div>
 
                             <div class="col-12 col-md-6 col-lg-6"></div>
 
                             <div class="input-set col-12 col-md-6 col-lg-6">
                                 <label for="requestor_phone">Phone</label>
-                                <input type="text" id="requestor_phone" data-mask="tel" data-regex-check="tel">
+                                <input type="text" id="requestor_phone" data-mask="tel" data-regex-check="tel" data-db-field-name="requestor_phone">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-6">
                                 <label for="requestor_email">Email</label>
-                                <input type="text" id="requestor_email" required>
+                                <input type="text" id="requestor_email" required data-db-field-name="requestor_email">
                             </div>
                         </div>
 
@@ -221,12 +221,12 @@
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
                                 <label for="tribute_name">Name of tribute recipient (person or organization)</label>
-                                <input type="text" id="tribute_name" required>
+                                <input type="text" id="tribute_name" required data-db-field-name="tribute_name">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
                                 <label for="tribute_details">Please provide as much background information as you can about the tribute purpose and recipient</label>
-                                <textarea name="tribute_details" id="tribute_details" maxlength="4000" required></textarea>
+                                <textarea name="tribute_details" id="tribute_details" maxlength="4000" required data-db-field-name="tribute_details"></textarea>
                             </div>
 
                             <div class="input-set col-12 col-md-12 col-lg-12">
@@ -237,12 +237,12 @@
 
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
                                 <label for="tribute_needed_date">Date By Which Tribute Is Needed</label>
-                                <input type="date" id="tribute_needed_date" required>
+                                <input type="date" id="tribute_needed_date" required data-db-field-name="tribute_needed_date">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
                                 <label for="delivery_method">Method Of Delivery</label>
-                                <select name="delivery_method" id="delivery_method" required>
+                                <select name="delivery_method" id="delivery_method" required data-db-field-name="delivery_method">
                                     <option></option>
                                     <option value="pickup">Pick up from Romney Building at 111 S. Capitol Ave Lansing, MI 48933 (Our office will reach out to coordinate a pick up time.)</option>
                                     <option value="mail">Mail Delivery</option>
@@ -251,7 +251,7 @@
 
                             <div class="col-12 row px-0 mx-0" data-target="delivery_method" data-target-pass="mail" style="display: none;">
                                 <div class="input-set input-set-singlecheck col-12 col-md-12 col-lg-12">
-                                    <input id="ship_to_address_true" type="checkbox" name="ship_to_address">
+                                    <input id="ship_to_address_true" type="checkbox" name="ship_to_address" data-db-field-name="ship_to_address">
                                     <label for="ship_to_address_true">
                                         <span class="label-box-display">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -265,19 +265,19 @@
                             </div>
 
                             <div class="col-12 row px-0 mx-0" data-target="ship_to_address_true" data-target-type="checkbox" data-target-pass="true" style="display: none;">
-                                <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
+                                <div class="input-set col-12 col-md-12 col-lg-12">
                                     <label for="mailing_address">Alternative Mailing Address</label>
-                                    <input type="text" id=mailingaddress" required>
+                                    <input type="text" id="mailingaddress" data-db-field-name="mailingaddress">
                                 </div>
 
-                                <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
+                                <div class="input-set col-12 col-md-6 col-lg-6">
                                     <label for="mailing_city">Alternative Mailing City</label>
-                                    <input type="text" id="mailing_city" required>
+                                    <input type="text" id="mailing_city" data-db-field-name="mailing_city">
                                 </div>
 
-                                <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
+                                <div class="input-set col-12 col-md-6 col-lg-6">
                                     <label for="mailing_state">Alternative Mailing State</label>
-                                    <select name="state" id="mailing_state" required>
+                                    <select name="state" id="mailing_state" data-db-field-name="mailing_state">
                                         <option></option>
                                         <option value="AL">Alabama</option>
                                         <option value="AK">Alaska</option>
@@ -332,9 +332,9 @@
                                     </select>
                                 </div>
 
-                                <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
+                                <div class="input-set col-12 col-md-6 col-lg-6">
                                     <label for="mailing_zip">Alternative Mailing Zip Code</label>
-                                    <input type="text" id="mailing_zip" required>
+                                    <input type="text" id="mailing_zip" data-db-field-name="mailing_zip">
                                 </div>
                             </div>
                         </div>
