@@ -405,7 +405,9 @@ function ProcessFormSubmit(form, form_submit_json_string) {
         }
     };
 
+    // temporary functionality for development
     console.log('Send:\n' + form_submit_json_string);
+    UpdateFormDisplay(form, 'success');
 
     // request.open('POST', url);
     // request.send();
