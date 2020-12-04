@@ -125,6 +125,11 @@
                                     <option></option>
                                     <option value="birthday">Birthday Greeting</option>
                                     <option value="military">Military Service Retirement Recognition</option>
+                                    <option value="retirement">General Retirement Recognition</option>
+                                    <option value="wedding">Wedding Anniversary</option>
+                                    <option value="eaglescout">Eagle Scout Achievement</option>
+                                    <option value="girlscout">Girl Scout Gold Award</option>
+                                    <option value="other">Other</option>
                                 </select>
                             </div>
 
@@ -135,7 +140,7 @@
                                     <label for="dob">Date of Birthday</label>
                                     <input type="date" id="dob">
                                 </div>
-    
+
                                 <div class="input-set col-12 col-md-6 col-lg-6">
                                     <label for="age">Which Birthday</label>
                                     <select name="age" id="age">
@@ -255,25 +260,83 @@
                             </div>
 
                             <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="military" style="display: none;">
-                                <div class="input-set col-12 col-md-12 col-lg-6">
+                                <div class="input-set col-12 col-md-12 col-lg-12">
                                     <label for="military_position">Military Position</label>
                                     <input type="text" id="military_position">
                                 </div>
 
                                 <div class="input-set col-12 col-md-6 col-lg-6">
                                     <label for="military_years">Number of Years Served</label>
-                                    <input type="number" id="military_years">
+                                    <input type="number" id="military_years" min="0">
                                 </div>
-    
+
                                 <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
                                     <label for="military_branch">Branch of Service</label>
                                     <select name="military_branch" id="military_branch" required>
                                         <option></option>
-                                        <option value="army">Army</option>
-                                        <option value="navy">Navy</option>
                                         <option value="airforce">Air Force</option>
+                                        <option value="army">Army</option>
+                                        <option value="coastguard">Coast Guard</option>
                                         <option value="marinecorps">Marine Corps</option>
+                                        <option value="nationalguard">National Guard</option>
+                                        <option value="navy">Navy</option>
+                                        <option value="spaceforce">Space Force</option>
                                     </select>
+                                </div>
+                            </div>
+
+                            <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="retirement" style="display: none;">
+                                <div class="input-set col-12 col-md-12 col-lg-12">
+                                    <label for="org_retiring_from">Organization Employee is Retiring From</label>
+                                    <input type="text" id="org_retiring_from">
+                                </div>
+
+                                <div class="input-set col-12 col-md-6 col-lg-6">
+                                    <label for="org_retiring_num_years">Number of Years Served</label>
+                                    <input type="number" id="org_retiring_num_years" min="0">
+                                </div>
+                            </div>
+
+                            <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="wedding" style="display: none;">
+                                <div class="input-set col-12 col-md-12 col-lg-6">
+                                    <label for="wedding_anniversary_date">Wedding Anniversary Date</label>
+                                    <input type="date" id="wedding_anniversary_date">
+                                </div>
+
+                                <div class="input-set col-12 col-md-6 col-lg-6">
+                                    <label for="years_of_marriage">Years of Marriage</label>
+                                    <input type="number" id="years_of_marriage" min="0">
+                                </div>
+                            </div>
+
+                            <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="eaglescout" style="display: none;">
+                                <div class="input-set col-12 col-md-12 col-lg-12">
+                                    <label for="boy_scout_name">Scout Name</label>
+                                    <input type="text" id="boy_scout_name">
+                                </div>
+
+                                <div class="input-set col-12 col-md-12 col-lg-6">
+                                    <label for="boy_scout_troop_num">Scout Troop Number</label>
+                                    <input type="text" id="boy_scout_troop_num">
+                                </div>
+                            </div>
+
+                            <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="girlscout" style="display: none;">
+                                <div class="input-set col-12 col-md-12 col-lg-12">
+                                    <label for="girl_scout_name">Scout Name</label>
+                                    <input type="text" id="girl_scout_name">
+                                </div>
+
+                                <div class="input-set col-12 col-md-12 col-lg-6">
+                                    <label for="girl_scout_troop_num">Scout Troop Number</label>
+                                    <input type="text" id="girl_scout_troop_num">
+                                </div>
+                            </div>
+
+                            <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="other" style="display: none;">
+                                <div class="input-set col-12 col-md-12 col-lg-12">
+                                    <label for="other_background_info">Please provide background information on the purpose and recipient of the letter</label>
+                                    <textarea name="other_background_info" id="other_background_info" maxlength="4000"></textarea>
                                 </div>
                             </div>
                         </div>
