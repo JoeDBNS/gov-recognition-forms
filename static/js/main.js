@@ -124,7 +124,8 @@ function SetupFormFieldMasks(form_id) {
                         IMask(
                             field, {
                                 mask: '(000) 000-0000'
-                            });
+                            }
+                        );
                         break;
                 
                     default:
@@ -397,7 +398,6 @@ function ProcessFormSubmit(form, form_submit_json_string) {
             var status = request.status;
             if (status === 0 || (status >= 200 && status < 400)) {
                 UpdateFormDisplay(form, 'success');
-                UpdateCookieSubCount();
             }
             else {
                 UpdateFormDisplay(form, 'error');
@@ -482,7 +482,9 @@ function SetReferenceListeners() {
 							}
 							else {
 								src_element.style.display = 'inherit';
-							}
+                            }
+                            MassSetRequiredStatus('add', src_element);
+                            SetupInputListeners(src_element.querySelectorAll('input, textarea, select'));
 						}
 						else {
 							if (src_element.hasAttribute('data-target-add') || src_element.hasAttribute('data-target-remove') || src_element.hasAttribute('data-target-set-required')) {
@@ -498,7 +500,9 @@ function SetReferenceListeners() {
 							}
 							else {
 								src_element.style.display = 'none';
-							}
+                            }
+                            MassSetRequiredStatus('remove', src_element);
+                            MassClearFieldValues(src_element);
 						}
 					});
 				});
@@ -522,7 +526,9 @@ function SetReferenceListeners() {
 						}
 						else {
 							src_element.style.display = 'inherit';
-						}
+                        }
+                        MassSetRequiredStatus('add', src_element);
+                        SetupInputListeners(src_element.querySelectorAll('input, textarea, select'));
 					}
 					else {
 						if (src_element.hasAttribute('data-target-add') || src_element.hasAttribute('data-target-remove') || src_element.hasAttribute('data-target-set-required')) {
@@ -538,7 +544,9 @@ function SetReferenceListeners() {
 						}
 						else {
 							src_element.style.display = 'none';
-						}
+                        }
+                        MassSetRequiredStatus('remove', src_element);
+                        MassClearFieldValues(src_element);
 					}
 				});
 				break;
@@ -561,7 +569,9 @@ function SetReferenceListeners() {
 						}
 						else {
 							src_element.style.display = 'inherit';
-						}
+                        }
+                        MassSetRequiredStatus('add', src_element);
+                        SetupInputListeners(src_element.querySelectorAll('input, textarea, select'));
 					}
 					else {
 						if (src_element.hasAttribute('data-target-add') || src_element.hasAttribute('data-target-remove') || src_element.hasAttribute('data-target-set-required')) {
@@ -577,10 +587,58 @@ function SetReferenceListeners() {
 						}
 						else {
 							src_element.style.display = 'none';
-						}
+                        }
+                        MassSetRequiredStatus('remove', src_element);
+                        MassClearFieldValues(src_element);
 					}
 				});
 				break;
 		}
 	});
+}
+
+function MassSetRequiredStatus(action, element) {
+    if (action === 'add') {
+        Array.from(element.querySelectorAll('.input-set-required-nocheck')).forEach((elm) => {
+            elm.classList.remove('input-set-required-nocheck');
+            elm.classList.add('input-set-required');
+        });
+
+        Array.from(element.querySelectorAll('[data-required-nocheck]')).forEach((elm) => {
+            elm.removeAttribute('data-required-nocheck');
+            elm.setAttribute('required', 'true');
+        });
+    }
+    else if (action === 'remove') {
+        Array.from(element.querySelectorAll('.input-set-failed')).forEach((elm) => {
+            elm.classList.remove('input-set-failed');
+        });
+
+        Array.from(element.querySelectorAll('.input-set-required')).forEach((elm) => {
+            elm.classList.remove('input-set-required');
+            elm.classList.add('input-set-required-nocheck');
+        });
+
+        Array.from(element.querySelectorAll('[required]')).forEach((elm) => {
+            elm.removeAttribute('required');
+            elm.setAttribute('data-required-nocheck', 'true');
+        });
+    }
+}
+
+function MassClearFieldValues(element) {
+    // Clear radio inputs
+    Array.from(element.querySelectorAll('input[type="radio"]:checked')).forEach((elm) => {
+        elm.removeAttribute('checked');
+    });
+
+    // Clear checkbox inputs
+    Array.from(element.querySelectorAll('input[type="checkbox"]')).forEach((elm) => {
+        elm.checked = false;
+    });
+
+    // Clear text inputs, textareas, and selects
+    Array.from(element.querySelectorAll('input, textarea, select')).forEach((elm) => {
+        elm.value = '';
+    });
 }
