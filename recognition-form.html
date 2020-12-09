@@ -121,7 +121,7 @@
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-6">
                                 <label for="type">What type of recognition are you seeking?</label>
-                                <select name="type" id="type" required>
+                                <select name="type" id="type" required data-db-field-name="type">
                                     <option></option>
                                     <option value="birthday">Birthday Greeting</option>
                                     <option value="military">Military Service Retirement Recognition</option>
@@ -138,12 +138,12 @@
                             <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="birthday" style="display: none;">
                                 <div class="input-set col-12 col-md-6 col-lg-6">
                                     <label for="dob">Date of Birthday</label>
-                                    <input type="date" id="dob">
+                                    <input type="date" id="dob" data-db-field-name="dob">
                                 </div>
 
                                 <div class="input-set col-12 col-md-6 col-lg-6">
                                     <label for="age">Which Birthday</label>
-                                    <select name="age" id="age">
+                                    <select name="age" id="age" data-db-field-name="age">
                                         <option></option>
                                         <option value="1">1st</option>
                                         <option value="2">2nd</option>
@@ -262,17 +262,17 @@
                             <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="military" style="display: none;">
                                 <div class="input-set col-12 col-md-12 col-lg-12">
                                     <label for="military_position">Military Position</label>
-                                    <input type="text" id="military_position">
+                                    <input type="text" id="military_position" data-db-field-name="military_position">
                                 </div>
 
                                 <div class="input-set col-12 col-md-6 col-lg-6">
                                     <label for="military_years">Number of Years Served</label>
-                                    <input type="number" id="military_years" min="0">
+                                    <input type="number" id="military_years" min="0" data-db-field-name="military_years">
                                 </div>
 
                                 <div class="input-set col-12 col-md-6 col-lg-6">
                                     <label for="military_branch">Branch of Service</label>
-                                    <select name="military_branch" id="military_branch">
+                                    <select name="military_branch" id="military_branch" data-db-field-name="military_branch">
                                         <option></option>
                                         <option value="airforce">Air Force</option>
                                         <option value="army">Army</option>
@@ -287,7 +287,7 @@
                                 <div class="col-12 row px-0 mx-0" data-target="military_branch" data-target-pass="other" style="display: none;">
                                     <div class="input-set col-12 col-md-12 col-lg-12">
                                         <label for="military_branch_other">Other Military Branch</label>
-                                        <input type="text" id="military_branch_other">
+                                        <input type="text" id="military_branch_other" data-db-field-name="military_branch_other">
                                     </div>
                                 </div>
                             </div>
@@ -295,55 +295,55 @@
                             <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="retirement" style="display: none;">
                                 <div class="input-set col-12 col-md-12 col-lg-12">
                                     <label for="org_retiring_from">Organization Employee is Retiring From</label>
-                                    <input type="text" id="org_retiring_from">
+                                    <input type="text" id="org_retiring_from" data-db-field-name="org_retiring_from">
                                 </div>
 
                                 <div class="input-set col-12 col-md-6 col-lg-6">
                                     <label for="org_retiring_num_years">Number of Years Served</label>
-                                    <input type="number" id="org_retiring_num_years" min="0">
+                                    <input type="number" id="org_retiring_num_years" min="0" data-db-field-name="org_retiring_num_years">
                                 </div>
                             </div>
 
                             <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="wedding" style="display: none;">
                                 <div class="input-set col-12 col-md-12 col-lg-6">
                                     <label for="wedding_anniversary_date">Wedding Anniversary Date</label>
-                                    <input type="date" id="wedding_anniversary_date">
+                                    <input type="date" id="wedding_anniversary_date" data-db-field-name="wedding_anniversary_date">
                                 </div>
 
                                 <div class="input-set col-12 col-md-6 col-lg-6">
                                     <label for="years_of_marriage">Years of Marriage</label>
-                                    <input type="number" id="years_of_marriage" min="0">
+                                    <input type="number" id="years_of_marriage" min="0" data-db-field-name="years_of_marriage">
                                 </div>
                             </div>
 
                             <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="eaglescout" style="display: none;">
                                 <div class="input-set col-12 col-md-12 col-lg-12">
                                     <label for="boy_scout_name">Scout Name</label>
-                                    <input type="text" id="boy_scout_name">
+                                    <input type="text" id="boy_scout_name" data-db-field-name="boy_scout_name">
                                 </div>
 
                                 <div class="input-set col-12 col-md-12 col-lg-6">
                                     <label for="boy_scout_troop_num">Scout Troop Number</label>
-                                    <input type="text" id="boy_scout_troop_num">
+                                    <input type="text" id="boy_scout_troop_num" data-db-field-name="boy_scout_troop_num">
                                 </div>
                             </div>
 
                             <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="girlscout" style="display: none;">
                                 <div class="input-set col-12 col-md-12 col-lg-12">
                                     <label for="girl_scout_name">Scout Name</label>
-                                    <input type="text" id="girl_scout_name">
+                                    <input type="text" id="girl_scout_name" data-db-field-name="girl_scout_name">
                                 </div>
 
                                 <div class="input-set col-12 col-md-12 col-lg-6">
                                     <label for="girl_scout_troop_num">Scout Troop Number</label>
-                                    <input type="text" id="girl_scout_troop_num">
+                                    <input type="text" id="girl_scout_troop_num" data-db-field-name="girl_scout_troop_num">
                                 </div>
                             </div>
 
                             <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="other" style="display: none;">
                                 <div class="input-set col-12 col-md-12 col-lg-12">
                                     <label for="other_background_info">Please provide background information on the purpose and recipient of the letter</label>
-                                    <textarea name="other_background_info" id="other_background_info" maxlength="4000"></textarea>
+                                    <textarea name="other_background_info" id="other_background_info" maxlength="4000" data-db-field-name="other_background_info"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -356,27 +356,27 @@
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-6">
                                 <label for="requestor_first_name">First Name of Requestor</label>
-                                <input type="text" id="requestor_first_name" required>
+                                <input type="text" id="requestor_first_name" required data-db-field-name="requestor_first_name">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-6">
                                 <label for="requestor_last_name">Last Name of Requestor</label>
-                                <input type="text" id="requestor_last_name" required>
+                                <input type="text" id="requestor_last_name" required data-db-field-name="requestor_last_name">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
                                 <label for="mailing_address">Mailing Address</label>
-                                <input type="text" id="mailing_address" required>
+                                <input type="text" id="mailing_address" required data-db-field-name="mailing_address">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
                                 <label for="mailing_city">City</label>
-                                <input type="text" id="mailing_city" required>
+                                <input type="text" id="mailing_city" required data-db-field-name="mailing_city">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
                                 <label for="mailing_state">State</label>
-                                <select name="mailing_state" id="mailing_state" required>
+                                <select name="mailing_state" id="mailing_state" required data-db-field-name="mailing_state">
                                     <option></option>
                                     <option value="AL">Alabama</option>
                                     <option value="AK">Alaska</option>
@@ -433,19 +433,19 @@
 
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
                                 <label for="mailing_zip">Zip Code</label>
-                                <input type="text" id="mailing_zip" required>
+                                <input type="text" id="mailing_zip" required data-db-field-name="mailing_zip">
                             </div>
 
                             <div class="col-12 col-md-6 col-lg-6"></div>
 
                             <div class="input-set col-12 col-md-6 col-lg-6">
                                 <label for="requestor_phone">Phone</label>
-                                <input type="text" id="requestor_phone" data-mask="tel" data-regex-check="tel">
+                                <input type="text" id="requestor_phone" data-mask="tel" data-regex-check="tel" data-db-field-name="requestor_phone">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-6">
                                 <label for="requestor_email">Email</label>
-                                <input type="text" id="requestor_email" required>
+                                <input type="text" id="requestor_email" required data-db-field-name="requestor_email">
                             </div>
                         </div>
 
@@ -457,17 +457,17 @@
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-6">
                                 <label for="receiver_first_name">First Name of person being recognized</label>
-                                <input type="text" id="receiver_first_name" required>
+                                <input type="text" id="receiver_first_name" required data-db-field-name="receiver_first_name">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-6">
                                 <label for="receiver_last_name">Last Name of person being recognized</label>
-                                <input type="text" id="receiver_last_name" required>
+                                <input type="text" id="receiver_last_name" required data-db-field-name="receiver_last_name">
                             </div>
 
                             <div class="input-set input-set-singlecheck col-12 col-md-12 col-lg-12">
-                                <input id="ship_to_address_true" type="checkbox" name="ship_to_address">
-                                <label for="ship_to_address_true">
+                                <input id="ship_to_different_address_true" type="checkbox" name="ship_to_different_address" data-db-field-name="ship_to_different_address_true">
+                                <label for="ship_to_different_address_true">
                                     <span class="label-box-display">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                     </span>
@@ -478,20 +478,20 @@
                                 </label>
                             </div>
                             
-                            <div class="col-12 row px-0 mx-0" data-target="ship_to_address_true" data-target-type="checkbox" data-target-pass="true" style="display: none;">
-                                <div class="input-set col-12 col-md-12 col-lg-12">
+                            <div class="col-12 row px-0 mx-0" data-target="ship_to_different_address_true" data-target-type="checkbox" data-target-pass="true" style="display: none;">
+                                <div class="input-set input-set-required-nocheck col-12 col-md-12 col-lg-12">
                                     <label for="alternate_address">Alternative Mailing Address</label>
-                                    <input type="text" id="alternate_address">
+                                    <input type="text" id="alternate_address" data-required-nocheck data-db-field-name="alternate_address">
                                 </div>
     
-                                <div class="input-set col-12 col-md-6 col-lg-6">
+                                <div class="input-set input-set-required-nocheck col-12 col-md-6 col-lg-6">
                                     <label for="alternate_city">Alternative Mailing City</label>
-                                    <input type="text" id="alternate_city">
+                                    <input type="text" id="alternate_city" data-required-nocheck data-db-field-name="alternate_city">
                                 </div>
     
-                                <div class="input-set col-12 col-md-6 col-lg-6">
+                                <div class="input-set input-set-required-nocheck col-12 col-md-6 col-lg-6">
                                     <label for="alternate_state">Alternative Mailing State</label>
-                                    <select name="state" id="alternate_state">
+                                    <select name="state" id="alternate_state" data-required-nocheck data-db-field-name="alternate_state">
                                         <option></option>
                                         <option value="AL">Alabama</option>
                                         <option value="AK">Alaska</option>
@@ -546,15 +546,15 @@
                                     </select>
                                 </div>
     
-                                <div class="input-set col-12 col-md-6 col-lg-6">
+                                <div class="input-set input-set-required-nocheck col-12 col-md-6 col-lg-6">
                                     <label for="alternate_zip">Alternative Mailing Zip Code</label>
-                                    <input type="text" id="alternate_zip">
+                                    <input type="text" id="alternate_zip" data-required-nocheck data-db-field-name="alternate_zip">
                                 </div>
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
                                 <label for="need_by">Date by which letter is needed</label>
-                                <input type="date" id="need_by" required>
+                                <input type="date" id="need_by" required data-db-field-name="need_by">
                             </div>
                         </div>
 

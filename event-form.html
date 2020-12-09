@@ -246,8 +246,8 @@
                             </div>
 
                             <div class="input-set input-set-singlecheck col-12 col-md-12 col-lg-12">
-                                <input id="ship_to_address_true" type="checkbox" name="ship_to_address" data-db-field-name="ship_to_address">
-                                <label for="ship_to_address_true">
+                                <input id="ship_to_different_address_true" type="checkbox" name="ship_to_different_address" data-db-field-name="ship_to_different_address_true">
+                                <label for="ship_to_different_address_true">
                                     <span class="label-box-display">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check"><polyline points="20 6 9 17 4 12"></polyline></svg>
                                     </span>
@@ -258,20 +258,20 @@
                                 </label>
                             </div>
                             
-                            <div class="col-12 row px-0 mx-0" data-target="ship_to_address_true" data-target-type="checkbox" data-target-pass="true" style="display: none;">
-                                <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
+                            <div class="col-12 row px-0 mx-0" data-target="ship_to_different_address_true" data-target-type="checkbox" data-target-pass="true" style="display: none;">
+                                <div class="input-set input-set-required-nocheck col-12 col-md-12 col-lg-12">
                                     <label for="mailing_address">Mailing Address</label>
-                                    <input type="text" id="mailing_address" required data-db-field-name="mailing_address">
+                                    <input type="text" id="mailing_address" data-required-nocheck data-db-field-name="mailing_address">
                                 </div>
     
-                                <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
+                                <div class="input-set input-set-required-nocheck col-12 col-md-6 col-lg-6">
                                     <label for="mailing_city">Mailing City</label>
-                                    <input type="text" id="mailing_city" required data-db-field-name="mailing_city">
+                                    <input type="text" id="mailing_city" data-required-nocheck data-db-field-name="mailing_city">
                                 </div>
     
-                                <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
+                                <div class="input-set input-set-required-nocheck col-12 col-md-6 col-lg-6">
                                     <label for="mailing_state">Mailing State</label>
-                                    <select name="state" id="mailing_state" required data-db-field-name="mailing_state">
+                                    <select name="state" id="mailing_state" data-required-nocheck data-db-field-name="mailing_state">
                                         <option></option>
                                         <option value="AL">Alabama</option>
                                         <option value="AK">Alaska</option>
@@ -326,9 +326,9 @@
                                     </select>
                                 </div>
     
-                                <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
+                                <div class="input-set input-set-required-nocheck col-12 col-md-6 col-lg-6">
                                     <label for="mailing_zip">Mailing Zip Code</label>
-                                    <input type="text" id="mailing_zip" required data-db-field-name="mailing_zip">
+                                    <input type="text" id="mailing_zip" data-required-nocheck data-db-field-name="mailing_zip">
                                 </div>
                             </div>
                         </div>

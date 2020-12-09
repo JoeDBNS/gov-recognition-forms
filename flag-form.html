@@ -133,34 +133,34 @@
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-6">
                                 <label for="prefix">Prefix</label>
-                                <input type="text" id="prefix" required>
+                                <input type="text" id="prefix" required data-db-field-name="prefix">
                             </div>
 
                             <div class="col-12 col-md-12 col-lg-6"></div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-6">
                                 <label for="first_name">First Name</label>
-                                <input type="text" id="first_name" required>
+                                <input type="text" id="first_name" required data-db-field-name="first_name">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-6">
                                 <label for="last_name">Last Name</label>
-                                <input type="text" id="last_name" required>
+                                <input type="text" id="last_name" required data-db-field-name="last_name">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
-                                <label for="address"> Address</label>
-                                <input type="text" id="address" required>
+                                <label for="address">Address</label>
+                                <input type="text" id="address" required data-db-field-name="address">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
                                 <label for="city">City</label>
-                                <input type="text" id="city" required>
+                                <input type="text" id="city" required data-db-field-name="city">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
                                 <label for="state">State</label>
-                                <select name="state" id="state" required>
+                                <select name="state" id="state" required data-db-field-name="state">
                                     <option></option>
                                     <option value="AL">Alabama</option>
                                     <option value="AK">Alaska</option>
@@ -217,19 +217,19 @@
 
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
                                 <label for="zip">Zip Code</label>
-                                <input type="text" id="zip" required>
+                                <input type="text" id="zip" required data-db-field-name="zip">
                             </div>
 
                             <div class="col-12 col-md-6 col-lg-6"></div>
 
                             <div class="input-set col-12 col-md-6 col-lg-6">
                                 <label for="phone">Phone</label>
-                                <input type="text" id="phone" data-mask="tel" data-regex-check="tel">
+                                <input type="text" id="phone" data-mask="tel" data-regex-check="tel" data-db-field-name="phone">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-6">
                                 <label for="email">Email</label>
-                                <input type="text" id="email" required>
+                                <input type="text" id="email" required data-db-field-name="email">
                             </div>
                         </div>
 
@@ -241,22 +241,22 @@
 
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
                                 <label for="michigan_flag_qty">Quantity of Michigan flags flown over Capitol ($45)</label>
-                                <input type="number" id="michigan_flag_qty" required min="0" value="0">
+                                <input type="number" id="michigan_flag_qty" required min="0" value="0" data-db-field-name="michigan_flag_qty">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-6 col-lg-6">
                                 <label for="us_flag_qty">Quantity of United States flags flown over Capitol ($25)</label>
-                                <input type="number" id="us_flag_qty" required min="0" value="0">
+                                <input type="number" id="us_flag_qty" required min="0" value="0" data-db-field-name="us_flag_qty">
                             </div>
 
                             <div class="input-set col-12 col-md-6 col-lg-6">
                                 <label for="flag_total">Total Cost</label>
-                                <input type="text" id="flag_total" readonly value="$0">
+                                <input type="text" id="flag_total" readonly value="$0" data-db-field-name="flag_total">
                             </div>
 
                             <div class="input-set col-12 col-md-12 col-lg-12">
                                 <label for="additional_info">Additional Information</label>
-                                <textarea name="additional_info" id="additional_info" maxlength="4000"></textarea>
+                                <textarea name="additional_info" id="additional_info" maxlength="4000" data-db-field-name="additional_info"></textarea>
                             </div>
                         </div>
 
