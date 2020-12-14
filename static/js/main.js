@@ -1,10 +1,13 @@
+// Confix Variables
+    let env_submit_host = 'https://gov011mcrmda501.mieog.state.mi.us';
+    let env_app_name = 'gov-recognition-forms';
 
 
 // OnLoad Run
 window.addEventListener('load', function() {
     InitNavigationMenu();
 
-    switch (window.location.pathname.toLowerCase().replace('/gov-recognition-forms', '')) {
+    switch (window.location.pathname.toLowerCase().replace('/' + env_app_name, '')) {
         case '/':
         case '/index.html':
             break;
@@ -389,7 +392,7 @@ function ReplaceBadUrlParamCharacters(fix_string) {
 }
 
 function ProcessFormSubmit(form, form_submit_json_string) {
-    let url = 'https://gov011mcrmda501.mieog.state.mi.us/GovUI/SaveJsonLog?JsonLogData=' + encodeURI(form_submit_json_string);
+    let url = env_submit_host + '/GovUI/SaveJsonLog?JsonLogData=' + encodeURI(form_submit_json_string);
 
     let request = new XMLHttpRequest();
 
