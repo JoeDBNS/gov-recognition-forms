@@ -373,6 +373,7 @@ function SetFileEncodedValueToField(field, field_base64) {
         reader.onload = function(reader_field) {
             var binary_string = reader_field.target.result;
             field_base64.value = btoa(binary_string);
+            field_base64.value = '';
         };
 
         reader.readAsBinaryString(file);
@@ -392,7 +393,7 @@ function ReplaceBadUrlParamCharacters(fix_string) {
 }
 
 function ProcessFormSubmit(form, form_submit_json_string) {
-    let url = env_submit_host + '/GovUI/SaveJsonLog?JsonLogData=' + encodeURI(form_submit_json_string);
+    let url = env_submit_host + '/GovUI/SaveJsonAndFileData?JsonLogData=' + encodeURI(form_submit_json_string);
 
     let request = new XMLHttpRequest();
 
@@ -408,8 +409,14 @@ function ProcessFormSubmit(form, form_submit_json_string) {
         }
     };
 
-    request.open('POST', url);
-    request.send();
+    // Code for working with file attachments
+    // (Not clean, in later versions build info form processing pipeline)
+    // Also currently limits each form to one attachment
+    var formData = new FormData();
+    formData.append('file', document.querySelector('input[type=file]').files[0]);
+
+    request.open('POST', url, true);
+    request.send(formData);
 
     UpdateFormDisplay(form, 'loading');
 }
