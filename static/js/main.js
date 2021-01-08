@@ -412,11 +412,15 @@ function ProcessFormSubmit(form, form_submit_json_string) {
     // Code for working with file attachments
     // (Not clean, in later versions build info form processing pipeline)
     // Also currently limits each form to one attachment
-    var formData = new FormData();
-    formData.append('file', document.querySelector('input[type=file]').files[0]);
+    var form_data = new FormData();
+    var file_field = document.querySelector('input[type=file]');
+
+    if (file_field) {
+        form_data.append('file', file_field.files[0]);
+    }
 
     request.open('POST', url, true);
-    request.send(formData);
+    request.send(form_data);
 
     UpdateFormDisplay(form, 'loading');
 }
