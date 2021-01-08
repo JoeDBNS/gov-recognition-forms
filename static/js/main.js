@@ -487,7 +487,7 @@ function SetReferenceListeners() {
 								}
 							}
 							else {
-								src_element.style.display = 'inherit';
+								src_element.style.display = '';
                             }
                             MassSetRequiredStatus('add', src_element);
                             SetupInputListeners(src_element.querySelectorAll('input, textarea, select'));
@@ -531,7 +531,7 @@ function SetReferenceListeners() {
 							}
 						}
 						else {
-							src_element.style.display = 'inherit';
+							src_element.style.display = '';
                         }
                         MassSetRequiredStatus('add', src_element);
                         SetupInputListeners(src_element.querySelectorAll('input, textarea, select'));
@@ -574,7 +574,7 @@ function SetReferenceListeners() {
 							}
 						}
 						else {
-							src_element.style.display = 'inherit';
+							src_element.style.display = '';
                         }
                         MassSetRequiredStatus('add', src_element);
                         SetupInputListeners(src_element.querySelectorAll('input, textarea, select'));
