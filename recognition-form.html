@@ -120,12 +120,12 @@
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-6">
-                                <label for="type">What type of recognition are you seeking?</label>
-                                <select name="type" id="type" required data-db-field-name="type">
+                                <label for="form_type">What type of recognition are you seeking?</label>
+                                <select name="type" id="form_type" required data-db-field-name="form_type">
                                     <option></option>
                                     <option value="birthday">Birthday Greeting</option>
-                                    <option value="military">Military Service Retirement Recognition</option>
-                                    <option value="retirement">General Retirement Recognition</option>
+                                    <option value="military">Military Service Retirement</option>
+                                    <option value="retirement">General Retirement</option>
                                     <option value="wedding">Wedding Anniversary</option>
                                     <option value="eaglescout">Eagle Scout Achievement</option>
                                     <option value="girlscout">Girl Scout Gold Award</option>
@@ -135,7 +135,7 @@
 
                             <div class="col-12 col-md-12 col-lg-6"></div>
 
-                            <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="birthday" style="display: none;">
+                            <div class="col-12 row px-0 mx-0" data-target="form_type" data-target-pass="birthday" style="display: none;">
                                 <div class="input-set input-set-required-nocheck col-12 col-md-6 col-lg-6">
                                     <label for="dob">Date of Birthday</label>
                                     <input type="date" id="dob" data-required-nocheck data-db-field-name="dob">
@@ -259,7 +259,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="military" style="display: none;">
+                            <div class="col-12 row px-0 mx-0" data-target="form_type" data-target-pass="military" style="display: none;">
                                 <div class="input-set input-set-required-nocheck col-12 col-md-12 col-lg-12">
                                     <label for="military_position">Military Position</label>
                                     <input type="text" id="military_position" data-required-nocheck data-db-field-name="military_position">
@@ -292,7 +292,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="retirement" style="display: none;">
+                            <div class="col-12 row px-0 mx-0" data-target="form_type" data-target-pass="retirement" style="display: none;">
                                 <div class="input-set input-set-required-nocheck col-12 col-md-12 col-lg-12">
                                     <label for="org_retiring_from">Organization Employee is Retiring From</label>
                                     <input type="text" id="org_retiring_from" data-required-nocheck data-db-field-name="org_retiring_from">
@@ -304,7 +304,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="wedding" style="display: none;">
+                            <div class="col-12 row px-0 mx-0" data-target="form_type" data-target-pass="wedding" style="display: none;">
                                 <div class="input-set input-set-required-nocheck col-12 col-md-12 col-lg-6">
                                     <label for="wedding_anniversary_date">Wedding Anniversary Date</label>
                                     <input type="date" id="wedding_anniversary_date" data-required-nocheck data-db-field-name="wedding_anniversary_date">
@@ -316,7 +316,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="eaglescout" style="display: none;">
+                            <div class="col-12 row px-0 mx-0" data-target="form_type" data-target-pass="eaglescout" style="display: none;">
                                 <div class="input-set input-set-required-nocheck col-12 col-md-12 col-lg-12">
                                     <label for="boy_scout_name">Scout Name</label>
                                     <input type="text" id="boy_scout_name" data-required-nocheck data-db-field-name="boy_scout_name">
@@ -328,7 +328,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="girlscout" style="display: none;">
+                            <div class="col-12 row px-0 mx-0" data-target="form_type" data-target-pass="girlscout" style="display: none;">
                                 <div class="input-set input-set-required-nocheck col-12 col-md-12 col-lg-12">
                                     <label for="girl_scout_name">Scout Name</label>
                                     <input type="text" id="girl_scout_name" data-required-nocheck data-db-field-name="girl_scout_name">
@@ -340,7 +340,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 row px-0 mx-0" data-target="type" data-target-pass="other" style="display: none;">
+                            <div class="col-12 row px-0 mx-0" data-target="form_type" data-target-pass="other" style="display: none;">
                                 <div class="input-set col-12 col-md-12 col-lg-12">
                                     <label for="other_background_info">Please provide background information on the purpose and recipient of the letter</label>
                                     <textarea name="other_background_info" id="other_background_info" maxlength="4000" data-db-field-name="other_background_info"></textarea>
@@ -471,7 +471,7 @@
                                 <input type="text" id="receiver_last_name" required data-db-field-name="receiver_last_name">
                             </div>
 
-                            <div class="container-fluid" data-target="type" data-target-pass="wedding" style="display: none;">
+                            <div class="container-fluid" data-target="form_type" data-target-pass="wedding" style="display: none;">
                                 <div class="row">
                                     <div class="input-set input-set-required-nocheck col-12 col-md-12 col-lg-6">
                                         <label for="receiver_spouse_first_name">First Name of spouse of person being recognized</label>
