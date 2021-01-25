@@ -1,6 +1,6 @@
 .form-select-module {
     font-family: "Montserrat", sans-serif;
-    padding: 70px 0 149px 0;
+    padding: 70px 0 17px 0;
     user-select: none;
 
     .form-select-header {
@@ -11,7 +11,7 @@
         flex-direction: column;
 
         .select-card {
-            height: 310px;
+            min-height: 334px;
             max-width: 300px;
             margin: 10px;
             padding: 28px 18px 20px 18px;
@@ -63,5 +63,9 @@
                 width: calc(100% - 20px);
             }
         }
+    }
+    .form-select-disclaimer {
+        margin-top: 60px;
+        font-size: .85rem;
     }
 }
