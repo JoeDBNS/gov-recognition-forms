@@ -318,8 +318,8 @@
 
                             <div class="col-12 row px-0 mx-0" data-target="form_type" data-target-pass="eaglescout" style="display: none;">
                                 <div class="input-set input-set-required-nocheck col-12 col-md-12 col-lg-12">
-                                    <label for="boy_scout_name">Scout Name</label>
-                                    <input type="text" id="boy_scout_name" data-required-nocheck data-db-field-name="boy_scout_name">
+                                    <label for="boy_scout_troop_city">Scout Troop City</label>
+                                    <input type="text" id="boy_scout_troop_city" data-required-nocheck data-db-field-name="boy_scout_troop_city">
                                 </div>
 
                                 <div class="input-set input-set-required-nocheck col-12 col-md-12 col-lg-6">
@@ -330,8 +330,8 @@
 
                             <div class="col-12 row px-0 mx-0" data-target="form_type" data-target-pass="girlscout" style="display: none;">
                                 <div class="input-set input-set-required-nocheck col-12 col-md-12 col-lg-12">
-                                    <label for="girl_scout_name">Scout Name</label>
-                                    <input type="text" id="girl_scout_name" data-required-nocheck data-db-field-name="girl_scout_name">
+                                    <label for="girl_scout_troop_city">Scout Troop City</label>
+                                    <input type="text" id="girl_scout_troop_city" data-required-nocheck data-db-field-name="girl_scout_troop_city">
                                 </div>
 
                                 <div class="input-set input-set-required-nocheck col-12 col-md-12 col-lg-6">
@@ -469,24 +469,34 @@
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-6">
-                                <label for="receiver_first_name">First Name of person being recognized</label>
+                                <label for="receiver_first_name">
+                                    First name of
+                                    <span data-target="form_type" data-target-pass="eaglescout|girlscout" data-target-add="d-none"> person </span>
+                                    <span data-target="form_type" data-target-pass="eaglescout|girlscout" style="display: none;"> scout </span>
+                                    being recognized
+                                </label>
                                 <input type="text" id="receiver_first_name" required data-db-field-name="receiver_first_name">
                             </div>
 
                             <div class="input-set input-set-required col-12 col-md-12 col-lg-6">
-                                <label for="receiver_last_name">Last Name of person being recognized</label>
+                                <label for="receiver_last_name">
+                                    Last name of
+                                    <span data-target="form_type" data-target-pass="eaglescout|girlscout" data-target-add="d-none"> person </span>
+                                    <span data-target="form_type" data-target-pass="eaglescout|girlscout" style="display: none;"> scout </span>
+                                    being recognized
+                                </label>
                                 <input type="text" id="receiver_last_name" required data-db-field-name="receiver_last_name">
                             </div>
 
                             <div class="container-fluid" data-target="form_type" data-target-pass="wedding" style="display: none;">
                                 <div class="row">
                                     <div class="input-set input-set-required-nocheck col-12 col-md-12 col-lg-6">
-                                        <label for="receiver_spouse_first_name">First Name of spouse of person being recognized</label>
+                                        <label for="receiver_spouse_first_name">First name of spouse of person being recognized</label>
                                         <input type="text" id="receiver_spouse_first_name" data-required-nocheck data-db-field-name="receiver_spouse_first_name">
                                     </div>
         
                                     <div class="input-set input-set-required-nocheck col-12 col-md-12 col-lg-6">
-                                        <label for="receiver_spouse_last_name">Last Name of spouse of person being recognized</label>
+                                        <label for="receiver_spouse_last_name">Last name of spouse of person being recognized</label>
                                         <input type="text" id="receiver_spouse_last_name" data-required-nocheck data-db-field-name="receiver_spouse_last_name">
                                     </div>
                                 </div>
