@@ -162,7 +162,7 @@ input[type="radio"] {
         border-color: transparent;
 
         label {
-            background-color: rgb(245, 245, 245);
+            background-color: #fafafa;
             margin-top: 2px;
             padding: 4px 4px 6px 4px;
             border: 1px solid;
@@ -179,7 +179,7 @@ input[type="radio"] {
             &:checked {
                 + label {
                     background-color: white;
-                    box-shadow: 0 0 2px #d4d4d4;
+                    box-shadow: 0 0 0px 1px #c4c4c4;
                 }
             }
             &:focus {
