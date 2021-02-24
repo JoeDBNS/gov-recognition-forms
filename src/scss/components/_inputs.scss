@@ -11,6 +11,10 @@ legend {
     transition: linear 0.1s box-shadow;
 }
 
+fieldset {
+    border-radius: $radius-input;
+}
+
 input[type="text"],
 input[type="search"],
 input[type="number"],
@@ -87,13 +91,23 @@ input[type="radio"] {
     margin: 14px 0;
 }
 
-.input-set-required label::after {
+.input-set-required label::after,
+.input-set-required legend::after {
     content: "*";
     position: relative;
     left: 6px;
     top: 0;
     font-size: .9rem;
     color: #d40000;
+}
+
+.input-set-required .set-fieldset label::after {
+    content: "";
+    position: relative;
+    left: 0;
+    top: 0;
+    font-size: 1rem;
+    color: black;
 }
 
 .input-set-failed {
@@ -108,7 +122,8 @@ input[type="radio"] {
     input[type="date"],
     input[type="datetime-local"],
     textarea,
-    select {
+    select,
+    fieldset .fieldset-inputs {
         border-color: red;
     }
 }
@@ -134,4 +149,44 @@ input[type="radio"] {
     position: relative;
     top: 3px;
     margin-left: 0.25rem;
+}
+
+.set-fieldset {
+    legend {
+        margin-top: 10px;
+    }
+
+    .fieldset-inputs {
+        border-style: solid;
+        border-width: 1px;
+        border-color: transparent;
+
+        label {
+            background-color: rgb(245, 245, 245);
+            margin-top: 2px;
+            padding: 4px 4px 6px 4px;
+            border: 1px solid;
+            border-color: #d4d4d4;
+            box-shadow: 0 0 2px #d4d4d4 inset;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        input[type="radio"] {
+            width: 0;
+            height: 0;
+            visibility: visible;
+            &:checked {
+                + label {
+                    background-color: white;
+                    box-shadow: 0 0 2px #d4d4d4;
+                }
+            }
+            &:focus {
+                + label {
+                    box-shadow: 0 0 0 1px #073f54;
+                }
+            }
+        }
+    }
 }
