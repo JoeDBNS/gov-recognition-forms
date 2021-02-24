@@ -195,7 +195,23 @@ function InitFormListeners() {
         Array.from(document.querySelectorAll('[data-form-submit-target]')).forEach(function(submit_buttom) {
             let form_submit_button = document.querySelector('[data-form-submit-target]');
             let form = document.querySelector('#' + form_submit_button.getAttribute('data-form-submit-target'));
-            let form_inputs = document.querySelectorAll('#' + form.getAttribute('id') + ' input, ' + '#' + form.getAttribute('id') + ' textarea, ' + '#' + form.getAttribute('id') + ' select');
+            let form_inputs = document.querySelectorAll(
+                '#' + form.getAttribute('id') + ' input[type="hidden"], '
+                + '#' + form.getAttribute('id') + ' input[type="text"], '
+                + '#' + form.getAttribute('id') + ' input[type="search"], '
+                + '#' + form.getAttribute('id') + ' input[type="number"], '
+                + '#' + form.getAttribute('id') + ' input[type="tel"], '
+                + '#' + form.getAttribute('id') + ' input[type="email"], '
+                + '#' + form.getAttribute('id') + ' input[type="password"], '
+                + '#' + form.getAttribute('id') + ' input[type="url"], '
+                + '#' + form.getAttribute('id') + ' input[type="time"], '
+                + '#' + form.getAttribute('id') + ' input[type="date"], '
+                + '#' + form.getAttribute('id') + ' input[type="datetime-local"], '
+                + '#' + form.getAttribute('id') + ' textarea, '
+                + '#' + form.getAttribute('id') + ' select, '
+                + '#' + form.getAttribute('id') + ' input[type="checkbox"], '
+                + '#' + form.getAttribute('id') + ' fieldset'
+            );
             let form_file_inputs = document.querySelectorAll('[type="file"]');
 
             SetupInputListeners(form_inputs);
@@ -263,35 +279,50 @@ function SortFormFields(form_inputs) {
 
     Array.from(form_inputs).forEach(function(input) {
         if (input.parentElement.classList.contains('input-set-required')) {
-            if (input.value !== '') {
-                if (input.hasAttribute('data-regex-check')) {
-                    if (CheckFieldValueFormat(input, input.getAttribute('data-regex-check'))) {
-                        passed_inputs.push(input);
-                    }
-                    else {
-                        failed_inputs.push(input);
-                    }
+            if (input.type === 'fieldset') {
+                if (input.querySelector(':checked')) {
+                    passed_inputs.push(input);
                 }
                 else {
-                    passed_inputs.push(input);
+                    failed_inputs.push(input);
                 }
             }
             else {
-                failed_inputs.push(input);
-            }
-        }
-        else {
-            if (input.hasAttribute('data-regex-check')) {
                 if (input.value !== '') {
-                    if (CheckFieldValueFormat(input, input.getAttribute('data-regex-check'))) {
-                        passed_inputs.push(input);
+                    if (input.hasAttribute('data-regex-check')) {
+                        if (CheckFieldValueFormat(input, input.getAttribute('data-regex-check'))) {
+                            passed_inputs.push(input);
+                        }
+                        else {
+                            failed_inputs.push(input);
+                        }
                     }
                     else {
-                        failed_inputs.push(input);
+                        passed_inputs.push(input);
                     }
                 }
                 else {
-                    passed_inputs.push(input);
+                    failed_inputs.push(input);
+                }
+            }
+        }
+        else {
+            if (input.type === 'fieldset') {
+                passed_inputs.push(input);
+            }
+            else {
+                if (input.hasAttribute('data-regex-check')) {
+                    if (input.value !== '') {
+                        if (CheckFieldValueFormat(input, input.getAttribute('data-regex-check'))) {
+                            passed_inputs.push(input);
+                        }
+                        else {
+                            failed_inputs.push(input);
+                        }
+                    }
+                    else {
+                        passed_inputs.push(input);
+                    }
                 }
             }
         }
@@ -349,6 +380,15 @@ function BuildFormSubmitJson(form_inputs) {
     Array.from(form_inputs).forEach(function(input) {
         if (input.hasAttribute('data-db-field-name')) {
             switch (input.type) {
+                case 'fieldset':
+                    if (input.querySelector(':checked')) {
+                        form_value_json[input.getAttribute('data-db-field-name')] = input.querySelector(':checked').value;
+                    }
+                    else {
+                        form_value_json[input.getAttribute('data-db-field-name')] = '';
+                    }
+                    break;
+
                 case 'checkbox':
                     form_value_json[input.getAttribute('data-db-field-name')] = input.checked;
                     break;
