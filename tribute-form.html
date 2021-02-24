@@ -340,6 +340,31 @@
                                     <input type="text" id="mailing_zip" data-required-nocheck data-db-field-name="mailing_zip">
                                 </div>
                             </div>
+
+                            <div class="input-set input-set-required col-12 col-md-12 col-lg-12">
+                                <fieldset class="set-fieldset container-fluid" required data-db-field-name="req_through_leg_office">
+                                    <legend class="fieldset-legend row">Have you submitted this request for a tribute through a legislative office?</legend>
+
+                                    <div class="fieldset-inputs row">
+                                        <input id="req_through_leg_office_yes" type="radio" name="req_through_leg_office" value="yes">
+                                        <label for="req_through_leg_office_yes" class="col-12 col-md-5 col-lg-4 col-xl-2 mx-0 mr-md-1">
+                                            <span class="label-text">Yes</span>
+                                        </label>
+
+                                        <input id="req_through_leg_office_no" type="radio" name="req_through_leg_office" value="no">
+                                        <label for="req_through_leg_office_no" class="col-12 col-md-5 col-lg-4 col-xl-2 mx-0 ml-md-1">
+                                            <span class="label-text">No</span>
+                                        </label>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            <div class="col-12 row px-0 mx-0" data-target="req_through_leg_office" data-target-type="radio" data-target-pass="yes" style="display: none;">
+                                <div class="input-set input-set-required-nocheck col-12 col-md-12 col-lg-12">
+                                    <label for="req_through_leg_office_name">Which Legislator did you work with?</label>
+                                    <input type="text" id="req_through_leg_office_name" data-required-nocheck data-db-field-name="req_through_leg_office_name">
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-action row justify-content-center">
