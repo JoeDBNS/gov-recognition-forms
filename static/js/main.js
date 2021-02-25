@@ -126,7 +126,7 @@ function SetupFormFieldMasks(form_id) {
                     case 'tel':
                         IMask(
                             field, {
-                                mask: '(000) 000-0000'
+                                mask: '000-000-0000'
                             }
                         );
                         break;
@@ -333,7 +333,7 @@ function SortFormFields(form_inputs) {
 
 function CheckFieldValueFormat(field, eval_as) {
     let regex_email_check = RegExp(/^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/);
-    let regex_phone_check = RegExp(/^.{14}$/);
+    let regex_phone_check = RegExp(/^.{12}$/);
 
     switch (eval_as) {
         case 'email':
